@@ -1,0 +1,61 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "جدول الضرب";
+}
+
+@section Css{
+    <style>
+
+        .op {
+            color:red;
+            
+        }
+
+        .mult-header{
+            text-align:center;
+            font-size:x-large;
+        }
+
+        .contact-us {
+            float: right;
+            font-size: large;
+        }
+
+        .panel-body p{
+            text-align:center;
+        }
+    </style>
+}
+
+@section  Scripts{
+    <script>
+        $(function () {
+            var maxHeight = 100;
+            var cards = $('.contact-us');
+            for (var i = 0; i < cards.length; i++) {
+                maxHeight = Math.max(maxHeight, $(cards[i]).height());
+            }
+            $('.contact-us .panel').css('height', maxHeight);
+        });
+    </script>
+ } 
+<div class="row">
+    <h3 class="page-title">جدول الضرب</h3>
+        @for (int x = 1; x <= 12; x++)
+        {
+<div class="contact-us col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="mult-header">  @x</div>
+        </div>
+        <div class="panel-body">
+            @for (int y = x; y <= 12; y++)
+            {
+                <p ><span>@x</span> <span class="op">×</span><span> @y</span> <span class="op">=</span> <span>@(x * y)</span></p>
+            }
+        </div>
+    </div>
+</div>
+        }
+</div>

@@ -1,0 +1,79 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@section Css{
+    <style>
+
+        .card {
+            float: right;
+            font-size: large;
+        }
+        .card img{
+            max-height: 150px;
+        }
+        .card {
+            margin:10px;
+            float: right;
+            font-size: large;
+        }
+            .card a {
+                text-decoration: none;
+            }
+        .card-title {
+            text-align: center;
+            padding-top: 15px
+        }
+    </style>
+}
+
+<div>
+    <h2 class="page-title">تعلم</h2>
+
+    <h3 class="page-title">KG 1 &amp; 2</h3>
+    <div class="row">
+        <div class="card col-xs-6 col-md-3">
+            <a href="Learn/kg/Gadwal" class="thumbnail">
+                <img src="~/content/images/gadwal.png" alt="جدول الضرب">
+                <div class="card-title">جدول الضرب</div>
+            </a>
+        </div>
+        <div class="card col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="~/content/images/gadwal.png" alt="جدول الضرب">
+                <div class="card-title">لغة انجليزية</div>
+            </a>
+        </div>
+        <div class="card col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="~/content/images/gadwal.png" alt="جدول الضرب">
+                <div class="card-title">أخري</div>
+            </a>
+        </div>
+    </div>
+
+    <h3 class="page-title">الصف الأول الإبتدائي</h3>
+    <div class="row">
+        <div class="card col-xs-6 col-md-3">
+            <a href="Learn/kg/Gadwal" class="thumbnail">
+                <img src="~/content/images/gadwal.png" alt="جدول الضرب">
+                <div class="card-title">لغة عربية</div>
+            </a>
+        </div>
+        <div class="card col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="~/content/images/gadwal.png" alt="جدول الضرب">
+                <div class="card-title">لغة انجليزية</div>
+            </a>
+        </div>
+        <div class="card col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="~/content/images/gadwal.png" alt="جدول الضرب">
+                <div class="card-title">حساب</div>
+            </a>
+        </div>
+
+    </div>
+</div>

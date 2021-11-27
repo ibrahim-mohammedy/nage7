@@ -1,0 +1,226 @@
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+  width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+  margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+  /* Hide captions */
+  .carousel-caption {
+    display: none;
+  }
+}
+
+.navbar-inverse {
+  background-color: #082966;
+  border-color: #082966;
+}
+
+.navbar-inverse a {
+  color: white !important;
+}
+
+.navbar-inverse a:hover {
+  color: #ffa013 !important;
+}
+
+#cookieConsent{
+  display: none;
+}
+
+#Input_RememberMe {
+  margin-left: 5px;
+  position: initial;
+}
+
+.login-box {
+  float: none;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #bbb3b3;
+  margin-top: 50px;
+  border-radius: 5px;
+}
+
+.login-box .title {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.content-area {
+  min-height: 600px;
+}
+
+element.style {
+}
+
+@media (min-width: 768px) {
+  .navbar-nav > li {
+    float: right;
+  }
+}
+
+.navbar-fixed-top .navbar-collapse,
+.navbar-fixed-bottom .navbar-collapse {
+  max-height: 400px;
+}
+
+.btn-add {
+  font-size: large;
+}
+
+.btn-add img {
+  max-height: 16px;
+}
+
+.data-table th {
+  text-align: right;
+}
+
+.logo {
+  max-height: 32px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
+.menu-links {
+  float: right;
+}
+
+.login-menu {
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  min-width: 300px;
+}
+
+.login-menu form {
+  min-width: 300px;
+}
+
+.navbar-toggle {
+  margin-right: 60px;
+}
+
+.profile-area img {
+  max-height: 32px;
+}
+
+.profile-area a {
+  text-decoration: none;
+}
+
+.card-columns {
+  @include media-breakpoint-only(lg) {
+    column-count: 4;
+  }
+
+  @include media-breakpoint-only(xl) {
+    column-count: 5;
+  }
+}
+
+.page-title {
+  padding: 15px;
+}
+
+@font-face {
+  font-family: arabic;
+  src: url(../fonts/arabic.ttf);
+}
+
+* {
+  font-family: arabic;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.quiz-questions-list {
+  margin-top: 50px;
+}
+
+.quiz-questions-list .report-correct-answer {
+  display: inline-block;
+  padding-right: 50px;
+  color: limegreen;
+  font-size: 20px;
+}
+
+.quiz-questions-list .wrong-answer {
+  text-decoration: line-through;
+}
+
+.quiz-questions-list .gadwal-question .question-body span {
+  padding: 10px;
+}
+
+.quiz-questions-list table {
+  width: 100%;
+  text-align: right;
+}
+
+.quiz-questions-list table th {
+  text-align: center;
+}
+
+.card {
+  float: right;
+  font-size: large;
+}
+
+  .card img {
+      height: 75px;
+  }
+
+.card {
+  float: right;
+  font-size: medium;
+}
+
+  .card a {
+      text-decoration: none;
+  }
+
+.card-title {
+  text-align: center;
+  padding-top: 15px
+}
+
+@media (max-width: 375px) {
+  #quizOptions {
+    padding: 0px;
+  }
+
+  .card {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+}
