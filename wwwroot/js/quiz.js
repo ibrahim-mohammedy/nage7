@@ -165,6 +165,8 @@ class Quiz {
         if (type == QuestionsTypes.Gadwal) return new GadwalQuestion();
         if (type == QuestionsTypes.Addition) return new AdditionQuestion();
         if (type == QuestionsTypes.Subtraction) return new SubtractionQuestion();
+        if (type == QuestionsTypes.Multiplication) return new MultiplicationQuestion();
+        if (type == QuestionsTypes.Division) return new DivisionQuestion();
 
         return null;
     }

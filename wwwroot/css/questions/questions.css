@@ -150,8 +150,6 @@
   margin: auto;
 }
 
-
-
 .quiz-top-page-number {
   margin-bottom: -10px;
 }
@@ -191,11 +189,17 @@
 
 .addition-question #answer {
   display: block;
+}
+
+.addition-question #answer.not-answered {
   padding-right: 10px;
 }
 
 @media (max-width: 375px) {
   #quizOptions {
     padding: 0px;
+  }
+  .question-options .option {
+    margin: 5px;
   }
 }

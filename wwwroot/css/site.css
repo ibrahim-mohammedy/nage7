@@ -72,16 +72,18 @@ body {
   margin-bottom: 20px;
 }
 
-.content-area {
-  min-height: 600px;
-}
-
-element.style {
-}
-
 @media (min-width: 768px) {
   .navbar-nav > li {
     float: right;
+  }
+  .content-area {
+    min-height: 600px;
+  }
+}
+
+@media (max-width: 310px) {
+  body {
+    padding-top: 80px;
   }
 }
 
@@ -147,7 +149,8 @@ element.style {
 }
 
 .page-title {
-  padding: 15px;
+  padding-bottom: 25px;
+  color: #286090;
 }
 
 @font-face {
@@ -211,10 +214,11 @@ element.style {
 
 .card-title {
   text-align: center;
-  padding-top: 15px;
+  padding-top: 10px;
+  font-size: small;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 550px) {
   #quizOptions {
     padding: 0px;
   }
@@ -223,10 +227,13 @@ element.style {
     padding-right: 5px;
     padding-left: 5px;
   }
+  .card-title {
+    height: 50px;
+  }
 }
 
 .top-menu {
-  margin-right: 100px;
+  margin-right: 75px;
 }
 
 .top-menu div {
@@ -234,6 +241,9 @@ element.style {
   padding: 10px;
 }
 
+img {
+  max-width: 100%;
+}
 /* *****     Bootstrap Overrides    ** */
 
 .d-inline {

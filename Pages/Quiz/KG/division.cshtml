@@ -1,7 +1,7 @@
 ﻿@page
-@model SubtractionQuizModel
+@model DivisionQuizModel
 @{
-    ViewData["Title"] = "تدريبات علي عملية الطرح";
+    ViewData["Title"] = "تدريبات علي عملية القسمة";
 }
 
 @section Css{
@@ -30,19 +30,21 @@
     <script src="~/js/questions/kasr.js"></script>
     <script src="~/js/questions/gadwal.js"></script>
     <script src="~/js/questions/addition.js"></script>
+    <script src="~/js/questions/multiplication.js"></script>
+    <script src="~/js/questions/division.js"></script>
     <script src="~/js/questions/subtraction.js"></script>
     <script type="text/javascript" src="~/js/quiz.js"></script>
     <script>
 
         $(function () {
             var quiz = new Quiz('quizArea');
-            quiz.questionsTypes = [new QuestionCategory(QuestionsTypes.Subtraction, 'عملية الطرح', 0)];
+            quiz.questionsTypes = [new QuestionCategory(QuestionsTypes.Division, 'عملية القسمة', 0)];
             quiz.show('quizArea');
         });
     </script>
 }
 <div class="row">
-    <h3 class="page-title">تدريبات علي عملية الطرح</h3>
+    <h3 class="page-title">تدريبات علي عملية القسمة</h3>
     <div id="quizArea">
     </div>
 </div>
