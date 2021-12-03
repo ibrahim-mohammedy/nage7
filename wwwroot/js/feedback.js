@@ -1,7 +1,7 @@
 ﻿class Feedback {
     correctAnswer() {
         $('#feedBack,.feedback-bg').remove();
-        var html = '<div class="feedback-bg"></div><div id="feedBack" class="correct-answer">';
+        var html = '<div class="feedback-bg"></div><div id="feedBack" class="feedback correct-answer">';
         html += '<img src="../../images/correct.svg"/>';
         html += '<div class="feedback-text">إجابة صحيحة</div>';
         html += "</div>";
@@ -16,7 +16,7 @@
 
     wrongAnswer() {
         $('#feedBack,.feedback-bg').remove();
-        var html = '<div class="feedback-bg"></div><div id="feedBack" class="wrong-answer">';
+        var html = '<div class="feedback-bg"></div><div id="feedBack" class="feedback wrong-answer">';
         html += '<img src="../../images/wrong.svg"/>';
         html += '<div class="feedback-text">إجابة خاطئة</div>';
         html += "</div>";

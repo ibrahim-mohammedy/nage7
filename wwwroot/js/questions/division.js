@@ -4,7 +4,7 @@
 
     this.title = "اختر حاصل قسمة الرقمين التاليين:";
     this.operation = "÷";
-    this.answer = this.getRandomNumber(1, 1000);
+    this.answer = this.getRandomNumber(1, 12);
     this.secondNumber = this.getRandomNumber(1, 12);
     this.firstNumber = Math.round(this.answer * this.secondNumber);
     this.options = this.getOptions();

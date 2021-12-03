@@ -1,0 +1,42 @@
+﻿@page
+@model EnglishQuizModel
+@{
+    ViewData["Title"] = "English Quiz";
+}
+
+@section Css{
+    <style>
+
+        .op {
+            color: red;
+        }
+
+        .mult-header {
+            text-align: center;
+            font-size: x-large;
+        }
+
+        .contact-us {
+            float: right;
+            font-size: large;
+        }
+    </style>
+}
+
+@section Scripts{
+    <script>
+
+        $(function () {
+            DB.initDB();
+            console.log(DB.years);
+            //var quiz = new Quiz('quizArea');
+            //quiz.questionsTypes = [new QuestionCategory(QuestionsTypes.Division, 'عملية القسمة', 0)];
+            //quiz.show('quizArea');
+        });
+    </script>
+}
+<div class="row">
+    <h3 class="page-title">تدريبات علي عملية القسمة</h3>
+    <div id="quizArea">
+    </div>
+</div>

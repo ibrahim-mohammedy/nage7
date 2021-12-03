@@ -183,15 +183,16 @@
   text-align: center;
 }
 
-.addition-question .number {
+.question .number {
   letter-spacing: 20px;
+  font-family: arial;
 }
 
-.addition-question #answer {
+.question #answer {
   display: block;
 }
 
-.addition-question #answer.not-answered {
+.question #answer.not-answered {
   padding-right: 10px;
 }
 
