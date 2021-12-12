@@ -1,0 +1,45 @@
+﻿@page
+@model EnglishQuizModel
+@{
+    ViewData["Title"] = "تدريبات على اللغة الإنجليزية";
+}
+
+@section Css{
+    <style>
+
+        .op {
+            color: red;
+        }
+
+        .mult-header {
+            text-align: center;
+            font-size: x-large;
+        }
+
+        .contact-us {
+            float: right;
+            font-size: large;
+        }
+    </style>
+}
+
+@section Scripts{
+    <script>
+        var navigation = new UnitsLessonsNavigtion('mainArea', function (yearId, subjectId, selectedUitsIds, selectedLessonsIds) {
+            var quiz = new Quiz('mainArea', yearId, subjectId, selectedUitsIds, selectedLessonsIds);
+            quiz.questionsTypes.push(new QuestionCategory(QuestionsTypes.EnglishChoice, "اختر الترجمة الصحيحة - عربي انجليزي", 5));
+            console.log('Starting..');
+            quiz.show();
+
+        });
+        $(function () {
+            DB.initDB();
+            navigation.showYears();
+        });
+    </script>
+}
+<div class="row">
+    <h3 class="page-title">تدريبات علي عملية القسمة</h3>
+    <div id="mainArea">
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿@page
+@model SubtractionQuizModel
+@{
+    ViewData["Title"] = "تدريبات علي عملية الطرح";
+}
+
+@section Css{
+    <style>
+
+        .op {
+            color: red;
+        }
+
+        .mult-header {
+            text-align: center;
+            font-size: x-large;
+        }
+
+        .contact-us {
+            float: right;
+            font-size: large;
+        }
+    </style>
+}
+
+@section Scripts{
+    <script>
+
+        $(function () {
+            var quiz = new Quiz('quizArea');
+            quiz.questionsTypes = [new QuestionCategory(QuestionsTypes.Subtraction, 'عملية الطرح', 0)];
+            quiz.show('quizArea');
+        });
+    </script>
+}
+<div class="row">
+    <h3 class="page-title">تدريبات علي عملية الطرح</h3>
+    <div id="quizArea">
+    </div>
+</div>
