@@ -27,6 +27,10 @@
   padding: 20px;
 }
 
+.question-body img {
+  max-height: 150px;
+}
+
 .pagging {
   margin-top: 26px;
   text-align: center;
@@ -207,6 +211,10 @@
   direction: ltr;
 }
 
+.english-word.audio {
+  max-height: 24px;
+  cursor: pointer;
+}
 @media (max-width: 375px) {
   #quizOptions {
     padding: 0px;

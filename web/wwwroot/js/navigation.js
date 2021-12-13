@@ -90,9 +90,10 @@
       }
       html += "</div></div></div>";
     }
+    html += "</div>";
     html +=
       '<div class="row col-lg-12 text-center mt-3"><span id="btnStartQuiz" class="btn btn-success">ابدأ</span></div>';
-    html += "</div></div>";
+    html += "</div>";
     $("#" + this.elementId).html(html);
     $(".select-unit").change(function () {
       $(this)

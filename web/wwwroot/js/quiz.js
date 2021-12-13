@@ -10,7 +10,8 @@ class QuestionsTypes {
   static Subtraction = 3;
   static Multiplication = 4;
   static Division = 5;
-  static EnglishChoice = 6;
+  static ArabicEnglishChoice = 6;
+  static EnglishArabicChoice = 7;
 }
 
 class QuestionCategory {
@@ -56,43 +57,48 @@ class Quiz {
   show() {
     console.log("Show...");
     var html = '<div id="quizOptions">';
-    html += "<table><tr>";
+    html += "<table>";
     for (var i = 0; i < self.questionsTypes.length; i++) {
       if (self.questionsTypes.length > 1)
         html +=
           '<tr><td colspan="2" class="text-center">' +
           self.questionsTypes[i].title +
           "</td></tr>";
-      html += '<td><label for="txtQuestionsNumber" >عدد الأسئلة</label></td>';
+      html +=
+        '<tr><td><label for="txtQuestionsNumber' +
+        i +
+        '" >عدد الأسئلة</label></td>';
       html += "<td>";
-      html += '<button class="btn btn-default" id="btnIncrement" >+</button>';
+      html += '<button class="btn btn-default increment-number">+</button>';
       html +=
         '<input type="number" class="form-control d-inline w-50 text-center questions-number" question-type="' +
         self.questionsTypes[i].questionType +
-        '" id="txtQuestionsNumber" >';
-      html += '<button class="btn btn-default" id="btnDecrement" >-</button>';
+        '" id="txtQuestionsNumber' +
+        i +
+        '" >';
+      html += '<button class="btn btn-default decrement-number" >-</button>';
       html += "</td>";
       html += "</tr>";
 
-      html += "<tr>";
-      html += "<td><label >مستوي الصعوبة</label></td>";
-      html += "<td>";
-      html += '<div class="btn-group btn-group-toggle" data-toggle="buttons">';
-      html += '<label class="btn btn-primary">';
-      html +=
-        '<input type="radio" name="options" id="hard" autocomplete="off"> صعب';
-      html += "</label>";
-      html += '<label class="btn btn-primary">';
-      html +=
-        '<input type="radio" name="options" id="medium" autocomplete="off"> متوسط';
-      html += "</label>";
-      html += '<label class="btn btn-primary active">';
-      html +=
-        '<input type="radio" name="options" id="easy" autocomplete="off" checked> سهل';
-      html += "</label>";
-      html += "</div>";
-      html += "</td>";
-      html += "</tr>";
+      // html += "<tr>";
+      // html += "<td><label >مستوي الصعوبة</label></td>";
+      // html += "<td>";
+      // html += '<div class="btn-group btn-group-toggle" data-toggle="buttons">';
+      // html += '<label class="btn btn-primary">';
+      // html +=
+      //     '<input type="radio" name="options" id="hard" autocomplete="off"> صعب';
+      // html += "</label>";
+      // html += '<label class="btn btn-primary">';
+      // html +=
+      //     '<input type="radio" name="options" id="medium" autocomplete="off"> متوسط';
+      // html += "</label>";
+      // html += '<label class="btn btn-primary active">';
+      // html +=
+      //     '<input type="radio" name="options" id="easy" autocomplete="off" checked> سهل';
+      // html += "</label>";
+      // html += "</div>";
+      // html += "</td>";
+      // html += "</tr>";
     }
     html += '<tr><td colspan="2" class="text-center">' + "" + "</td></tr><tr>";
     html +=
@@ -102,15 +108,15 @@ class Quiz {
 
     $("#" + self.quizAreaId).html(html);
     self.loadDefaultOptions();
-    $("#btnIncrement").click(function () {
-      var val = parseInt($("#txtQuestionsNumber").val()) + 1;
+    $(".increment-number").click(function () {
+      var val = parseInt($(this).parent().find(".questions-number").val()) + 1;
       if (val > 25) return;
-      $("#txtQuestionsNumber").val(val);
+      $(this).parent().find(".questions-number").val(val);
     });
-    $("#btnDecrement").click(function () {
-      var val = parseInt($("#txtQuestionsNumber").val()) - 1;
+    $(".decrement-number").click(function () {
+      var val = parseInt($(this).parent().find(".questions-number").val()) - 1;
       if (val < 0) return;
-      $("#txtQuestionsNumber").val(val);
+      $(this).parent().find(".questions-number").val(val);
     });
 
     $("#btnStart").click(function () {
@@ -121,13 +127,21 @@ class Quiz {
   }
 
   loadDefaultOptions() {
-    var numberOfQuestions = DB.getItem("gadwal-quiz-questions-number");
-    if (!numberOfQuestions) numberOfQuestions = "0";
-    $("#txtQuestionsNumber").val(numberOfQuestions);
+    var txtBoxs = $(".questions-number");
+    for (var i = 0; i < txtBoxs.length; i++) {
+      var type = $(txtBoxs[i]).attr("question-type");
+      var numberOfQuestions = DB.getItem("quiz-questions-number-" + type);
+      if (!numberOfQuestions) numberOfQuestions = "0";
+      $(txtBoxs[i]).val(numberOfQuestions);
+    }
   }
 
   saveDefaultOptions() {
-    DB.saveItem("gadwal-quiz-questions-number", $("#txtQuestionsNumber").val());
+    var txtBoxs = $(".questions-number");
+    for (var i = 0; i < txtBoxs.length; i++) {
+      var type = $(txtBoxs[i]).attr("question-type");
+      DB.saveItem("quiz-questions-number-" + type, $(txtBoxs[i]).val());
+    }
   }
 
   start() {
@@ -164,7 +178,7 @@ class Quiz {
     for (var i = 0; i < numbers.length; i++) {
       var number = parseInt($(numbers[i]).val());
       var questionType = $(numbers[i]).attr("question-type");
-      for (var i = 0; i < number; i++) {
+      for (var j = 0; j < number; j++) {
         self.questions.push(self.createQuestion(questionType));
       }
     }
@@ -177,8 +191,16 @@ class Quiz {
     if (type == QuestionsTypes.Multiplication)
       return new MultiplicationQuestion();
     if (type == QuestionsTypes.Division) return new DivisionQuestion();
-    if (type == QuestionsTypes.EnglishChoice)
-      return new EnglishChoiceQuestion(
+    if (type == QuestionsTypes.ArabicEnglishChoice)
+      return new ArabicEnglishChoiceQuestion(
+        this.yearId,
+        this.subjectId,
+        this.unitsIds,
+        this.lessonsIds
+      );
+
+    if (type == QuestionsTypes.EnglishArabicChoice)
+      return new EnglishArabicChoiceQuestion(
         this.yearId,
         this.subjectId,
         this.unitsIds,
@@ -214,6 +236,8 @@ class Quiz {
   }
 
   finish() {
+    for (var i = 0; i < self.questions.length; i++)
+      self.questions[i].isAnswered = true;
     self.startDate = new Date();
     var passed = self.getScore() >= 50;
     var html = '<div class="quiz-result col-lg-6 text-center">';
@@ -239,6 +263,12 @@ class Quiz {
     $("#" + self.quizAreaId).html(html);
     $("#btnResetQuiz").click(function () {
       self.show();
+    });
+    $(".english-word.audio").click(function () {
+      var word = $(this).attr("word");
+      word = word.toLowerCase().replace(/ /g, "-");
+      var player = new Audio("../../content/sound/english/" + word + "/0.mp3");
+      player.play();
     });
   }
 

@@ -8,6 +8,10 @@
     this.answerIsInBody = true;
   }
 
+  getOptionsClass() {
+    return "circles";
+  }
+
   getOptions() {
     var options = new Array();
     options.push(this.answer);

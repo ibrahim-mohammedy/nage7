@@ -14,6 +14,9 @@
   circleOptions = true;
   constructor() {}
 
+  getOptionsClass() {
+    return "option";
+  }
   getOptions() {
     return [];
   }
@@ -44,8 +47,7 @@
     if (!this.answerIsInBody) html += this.getAnswerHtml();
     html += "</div> ";
     html +=
-      '<div class="question-options ' +
-      (this.circleOptions ? "circles" : "") +
+      '<div class="question-options ' + this.getOptionsClass()+
       (this.canAnswer ? "" : "disabled") +
       '">';
     for (var i = 0; i < this.optionsCount; i++) {

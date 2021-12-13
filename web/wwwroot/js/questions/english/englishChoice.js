@@ -3,9 +3,15 @@
   subjectId = 0;
   unitsIds = [];
   lessonsIds = [];
-  translationDirection = TranslationDirection.ArabicEnglish;
+  translationDirection;
   word = null;
-  constructor(_yearId, _subjectId, _unitsIds, _lessonsIds) {
+  constructor(
+    _yearId,
+    _subjectId,
+    _unitsIds,
+    _lessonsIds,
+    _translationDirection
+  ) {
     super();
 
     this.title = "اختر الترجمة الصحيحة:";
@@ -15,14 +21,34 @@
     this.unitsIds = _unitsIds;
     this.circleOptions = false;
     this.answerIsInBody = true;
+    this.translationDirection = _translationDirection;
+    this.userAnswer = "";
     this.pickRandomWord();
+  }
+
+  getWord() {
+    return this.translationDirection == TranslationDirection.ArabicEnglish
+      ? this.word.translation
+      : this.word.word;
+  }
+
+  getAnswer() {
+    return this.translationDirection == TranslationDirection.ArabicEnglish
+      ? this.word.word
+      : this.word.translation;
+  }
+
+  getTextClass() {
+    return this.translationDirection == TranslationDirection.ArabicEnglish
+      ? "english-text"
+      : "arabic-text";
   }
 
   pickRandomWord() {
     var allWords = this.getAllWord();
     const randomIndex = Math.round(Math.random() * 100000000) % allWords.length;
     this.word = allWords[randomIndex];
-    this.answer = this.word.translation;
+    this.answer = this.getAnswer();
   }
 
   getAllWord() {
@@ -49,10 +75,24 @@
 
   getBody = function () {
     var html = "";
-    html += '<div class="english-text">' + this.word.word + "</div>";
+    html +=
+      '<div class="col col-lg-6 col-sm-6 col-md-6 col-xs-6 ' +
+      this.getTextClass() +
+      '">' +
+      this.getWord() +
+      "</div>";
+    html +=
+      '<div class="col col-lg-6 col-sm-6 col-md-6 col-xs-6"><img src="' +
+      location.origin +
+      "/content/images/english/" +
+      this.word.word.toLowerCase().replace(/ /g, "-") +
+      '/0.jpg"></div>';
     return html;
   };
 
+  getOptionsClass() {
+    return this.getTextClass();
+  }
   getOptions() {
     var allWords = this.getAllWord();
     var options = new Array();
@@ -61,7 +101,11 @@
       const randomIndex =
         Math.round(Math.random() * 100000000) % allWords.length;
       if (allWords[randomIndex].word == this.word) continue;
-      options.push(allWords[randomIndex].translation);
+      options.push(
+        this.translationDirection == TranslationDirection.ArabicEnglish
+          ? allWords[randomIndex].word
+          : allWords[randomIndex].translation
+      );
     }
     options = options.sort((a, b) => 0.5 - Math.random());
     return options;
@@ -74,18 +118,22 @@
       return html;
     }
     return (
-      '<div id="answer" class="english-text ' +
+      '<div id="answer" class="' +
+      this.getTextClass() +
       (this.userAnswer == this.answer
-        ? "correct-answer d-inline"
-        : "wrong-answer") +
+        ? " correct-answer d-inline"
+        : " wrong-answer") +
       '">' +
       this.userAnswer +
-      "</div>"
+      "</div>" +
+      '<div><img class="english-word audio" word="' +
+      this.word.word +
+      '" src="https://cdn0.iconfinder.com/data/icons/essentials-solid-glyphs-vol-1/100/Sound-Volume-Audio-128.png"/></div>'
     );
   }
 }
 
 class TranslationDirection {
-  ArabicEnglish = 0;
-  EnglishArabic = 1;
+  static ArabicEnglish = 0;
+  static EnglishArabic = 1;
 }

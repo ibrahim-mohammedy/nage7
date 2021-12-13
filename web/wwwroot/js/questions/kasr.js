@@ -14,6 +14,10 @@
     return html;
   };
 
+  getOptionsClass() {
+    return "circles";
+  }
+
   getOptions() {
     var options = new Array();
     options.push(this.answer);
