@@ -207,6 +207,10 @@
   padding-right: 10px;
 }
 
+.free-height {
+  height: initial!important;
+}
+
 .english-text {
   direction: ltr;
 }

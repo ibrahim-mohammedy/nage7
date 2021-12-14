@@ -282,6 +282,9 @@ img {
 }
 /* *****     Bootstrap Overrides    ** */
 
+d-block {
+  display: block;
+}
 .d-inline {
   display: inline;
 }
@@ -292,6 +295,10 @@ img {
 
 .btn-main {
   width: 100px;
+}
+
+.mt-0 {
+  margin-top: 0px;
 }
 
 .mt-1 {

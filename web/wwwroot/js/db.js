@@ -70,7 +70,25 @@
               new EnglishWord(2, "He", "هو", false, false),
               new EnglishWord(3, "She", "هي", false, false),
               new EnglishWord(4, "They", "هم / هن", false, false),
-              new EnglishWord(5, "I'm  / I am", "أنا أكون", false, false),
+              new EnglishWord(5, "I am", "أنا أكون", false, false),
+              new EnglishWord(
+                6,
+                "You are",
+                "أنت تكون / أنتم تكونون",
+                false,
+                false
+              ),
+              new EnglishWord(7, "He is", "هو  يكون", false, false),
+              new EnglishWord(8, "She is", "هي تكون", false, false),
+              new EnglishWord(
+                9,
+                "They are",
+                "هم يكونون / هن يكنن",
+                false,
+                false
+              ),
+
+              new EnglishWord(5, "I'm", "أنا أكون", false, false),
               new EnglishWord(
                 6,
                 "You're / You are",
@@ -78,15 +96,16 @@
                 false,
                 false
               ),
-              new EnglishWord(7, "He's / He is", "هو  يكون", false, false),
-              new EnglishWord(8, "She's / She is", "هي تكون", false, false),
+              new EnglishWord(7, "He's", "هو  يكون", false, false),
+              new EnglishWord(8, "She's", "هي تكون", false, false),
               new EnglishWord(
                 9,
-                "They're / They are",
+                "They're",
                 "هم يكونون / هن يكنن",
                 false,
                 false
               ),
+
               new EnglishWord(10, "What", "ما  / ماذا", false, false),
               new EnglishWord(11, "Where", "أين", false, false),
               new EnglishWord(12, "When", "متى", false, false),

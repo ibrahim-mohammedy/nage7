@@ -73,23 +73,6 @@
     return allWords;
   }
 
-  getBody = function () {
-    var html = "";
-    html +=
-      '<div class="col col-lg-6 col-sm-6 col-md-6 col-xs-6 ' +
-      this.getTextClass() +
-      '">' +
-      this.getWord() +
-      "</div>";
-    html +=
-      '<div class="col col-lg-6 col-sm-6 col-md-6 col-xs-6"><img src="' +
-      location.origin +
-      "/content/images/english/" +
-      this.word.word.toLowerCase().replace(/ /g, "-") +
-      '/0.jpg"></div>';
-    return html;
-  };
-
   getOptionsClass() {
     return this.getTextClass();
   }
@@ -110,6 +93,58 @@
     options = options.sort((a, b) => 0.5 - Math.random());
     return options;
   }
+
+  getBody = function () {
+    var html = "";
+    html +=
+      '<div class="col col-lg-6 col-sm-6 col-md-6 col-xs-6 ' +
+      this.getTextClass() +
+      '">' +
+      this.getWord() +
+      "</div>";
+    html +=
+      '<div class="col col-lg-6 col-sm-6 col-md-6 col-xs-6"><img src="' +
+      location.origin +
+      "/content/images/english/" +
+      this.word.word.toLowerCase().replace(/ /g, "-") +
+      '/0.jpg"></div>';
+    return html;
+  };
+  
+  getHtml = function () {
+    if (this.options.length == 0) this.options = this.getOptions();
+    var html = "";
+    html += '<div class="question">';
+    html += '<div class="question-body row">';
+    html += '<div class="col col-lg-6 col-sm-6 col-md-6 col-xs-6">';
+    html += "<div>" + this.getWord() + "</div>";
+    if (!this.answerIsInBody) html += this.getAnswerHtml();
+    html +=
+      '<img src="' +
+      location.origin +
+      "/content/images/english/" +
+      Utilities.cleanWord(this.word.word) +
+      '/0.jpg">';
+    html += "</div>";
+    html +=
+      '<div class="col col-lg-6 col-sm-6 col-md-6 col-xs-6 ' +
+      this.getTextClass() +
+      '">';
+    html +=
+      '<div class="question-options mt-0 ' +
+      this.getOptionsClass() +
+      (this.canAnswer ? "" : "disabled") +
+      '">';
+    for (var i = 0; i < this.optionsCount; i++) {
+      html +=
+        '<div class="option d-block free-height">' + this.options[i] + "</div>";
+    }
+    html += "</div> ";
+    html += "</div>";
+    html += "</div> ";
+    html += "</div>";
+    return html;
+  };
 
   getAnswerHtml() {
     if (!this.isAnswered) {

@@ -266,7 +266,7 @@ class Quiz {
     });
     $(".english-word.audio").click(function () {
       var word = $(this).attr("word");
-      word = word.toLowerCase().replace(/ /g, "-");
+      word =  Utilities.cleanWord(word);
       var player = new Audio("../../content/sound/english/" + word + "/0.mp3");
       player.play();
     });

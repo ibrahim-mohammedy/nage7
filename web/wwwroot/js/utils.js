@@ -44,4 +44,12 @@
     "التاسعة عشر",
     "العشرين",
   ];
+
+  static cleanWord(word) {
+    return word
+      .toLowerCase()
+      .replace(/ /g, "-")
+      .replace(/\?/g, "")
+      .replace(/؟/g, "");
+  }
 }
