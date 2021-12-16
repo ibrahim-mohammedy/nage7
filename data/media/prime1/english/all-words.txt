@@ -3,11 +3,16 @@ You
 He
 She
 They
-I'm  / I am
-You're / You are
-He's / He is
-She's / She is
-They're / They are
+I am
+You are
+He is
+She is
+They are
+I'm
+You're
+He's
+She's
+They're
 What
 Where
 When

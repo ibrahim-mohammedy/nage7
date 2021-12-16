@@ -21,7 +21,7 @@
     </Prod>
   </EnvironmentInformation>
   <ExecutionList>
-    <TextToSpeech_Prim1_English persona="admin" />
-    <CrawlImages_Prim1_English persona="admin" />
+    <TextToSpeech_English persona="admin" />
+    <CrawlImages_English persona="admin" />
   </ExecutionList>
 </UIAutomation>

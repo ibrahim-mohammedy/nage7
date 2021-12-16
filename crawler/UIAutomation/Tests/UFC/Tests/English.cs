@@ -18,10 +18,11 @@ namespace UIAutomation.Tests.UFC.Tests.Groups
     public class English : Test
     {
         [Test, TestOf("")]
-        public void CrawlImages_Prim1_English()
+        [Parallelizable]
+        public void CrawlImages_English()
         {
-            string imagesDir = @"C:\Projects\nage7\data\prime1\english\images";
-            string wordsFile = @"C:\Projects\nage7\data\prime1\english\all-words.txt";
+            string imagesDir = @"C:\Projects\nage7\web\wwwroot\content\images\english";
+            string wordsFile = @"C:\Projects\nage7\data\media\prime1\english\all-words.txt";
             WebClient client = new WebClient();
             Random random = new Random();
             CustomDriver driver = null;
@@ -29,7 +30,7 @@ namespace UIAutomation.Tests.UFC.Tests.Groups
             {
                 try
                 {
-                    string cleanWord = word.ToLower().Trim().Replace(" ", "-");
+                    string cleanWord = CleanWord(word);
                     string wordDir = Path.Combine(imagesDir, cleanWord);
                     if (Directory.Exists(wordDir))
                     {
@@ -147,35 +148,37 @@ namespace UIAutomation.Tests.UFC.Tests.Groups
         }
 
         [Test, TestOf("")]
-        public void TextToSpeech_Prim1_English()
+        [Parallelizable]
+        public void TextToSpeech_English()
         {
-            string soundsDir = @"C:\Projects\nage7\data\prime1\english\sounds";
-            string wordsFile = @"C:\Projects\nage7\data\prime1\english\all-words.txt";
+            string soundsDir = @"C:\Projects\nage7\web\wwwroot\content\sound\english";
+            string wordsFile = @"C:\Projects\nage7\data\media\prime3\english\all-words.txt";
             WebClient client = new WebClient();
             Random random = new Random();
             List<KeyValuePair<string, string>> sounds = new List<KeyValuePair<string, string>>();
             sounds.Add(new KeyValuePair<string, string>("en-US-Standard-B", "0"));
-            sounds.Add(new KeyValuePair<string, string>("en-US-Standard-C", "0"));
-            sounds.Add(new KeyValuePair<string, string>("en-US-Standard-D", "0"));
-            sounds.Add(new KeyValuePair<string, string>("en-US-Standard-E", "0"));
-            sounds.Add(new KeyValuePair<string, string>("en-US-Standard-E", "0"));
-            sounds.Add(new KeyValuePair<string, string>("Salli_Female", "1"));
-            sounds.Add(new KeyValuePair<string, string>("Joanna_Male", "1"));
-            sounds.Add(new KeyValuePair<string, string>("Matthew_Male", "1"));
-            sounds.Add(new KeyValuePair<string, string>("Ivy_Female", "1"));
-            sounds.Add(new KeyValuePair<string, string>("Justin_Male", "1"));
-            sounds.Add(new KeyValuePair<string, string>("Kendra_Female", "1"));
-            sounds.Add(new KeyValuePair<string, string>("Kimberly_Female", "1"));
-            sounds.Add(new KeyValuePair<string, string>("Joey_Male", "1"));
+            //sounds.Add(new KeyValuePair<string, string>("en-US-Standard-C", "0"));
+            //sounds.Add(new KeyValuePair<string, string>("en-US-Standard-D", "0"));
+            //sounds.Add(new KeyValuePair<string, string>("en-US-Standard-E", "0"));
+            //sounds.Add(new KeyValuePair<string, string>("en-US-Standard-E", "0"));
+            //sounds.Add(new KeyValuePair<string, string>("Salli_Female", "1"));
+            //sounds.Add(new KeyValuePair<string, string>("Joanna_Male", "1"));
+            //sounds.Add(new KeyValuePair<string, string>("Matthew_Male", "1"));
+            //sounds.Add(new KeyValuePair<string, string>("Ivy_Female", "1"));
+            //sounds.Add(new KeyValuePair<string, string>("Justin_Male", "1"));
+            //sounds.Add(new KeyValuePair<string, string>("Kendra_Female", "1"));
+            //sounds.Add(new KeyValuePair<string, string>("Kimberly_Female", "1"));
+            //sounds.Add(new KeyValuePair<string, string>("Joey_Male", "1"));
 
             if (!Directory.Exists(soundsDir)) Directory.CreateDirectory(soundsDir);
             foreach (string word in File.ReadLines(wordsFile))
             {
+                string cleanWord, wordDir;
                 try
                 {
-                    string cleanWord = word.ToLower().Trim().Replace(" ", "-");
-                    string wordDir = Path.Combine(soundsDir, cleanWord);
-                    if (Directory.Exists(wordDir)) continue;
+                    cleanWord = CleanWord(word);
+                    wordDir = Path.Combine(soundsDir, cleanWord);
+                    if (Directory.Exists(wordDir) && Directory.GetFiles(wordDir).Length >= sounds.Count) continue;
                     else Directory.CreateDirectory(wordDir);
 
                     if (string.IsNullOrEmpty(cleanWord)) continue;
@@ -198,15 +201,22 @@ namespace UIAutomation.Tests.UFC.Tests.Groups
 
                         if (binaryData.Length == 0) continue;
                         string targetPath = Path.Combine(wordDir, i + ".mp3");
-
+                        Thread.Sleep(new Random().Next(5000, 7000));
                         File.WriteAllBytes(targetPath, binaryData);
                     }
-                    Thread.Sleep(new Random().Next(1000, 2000));
+                    Thread.Sleep(new Random().Next(60000, 70000));
                 }
                 catch (Exception ex)
                 {
+                    string error = ex.Message;
+                    Thread.Sleep(new Random().Next(500000, 600000));
                 }
             }
+        }
+
+        string CleanWord(string word)
+        {
+            return word.ToLower().Trim().Replace(" ", "-").Replace("?", "").Replace("؟", "").Replace("/", "-");
         }
     }
 }
