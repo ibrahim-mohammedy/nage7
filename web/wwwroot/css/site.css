@@ -183,23 +183,22 @@ a[href="http://somee.com"]
 
 .quiz-questions-list .report-correct-answer {
   display: inline-block;
-  padding-right: 50px;
-  color: limegreen;
   font-size: 20px;
 }
 
-.quiz-questions-list td.wrong-answer {
+.quiz-questions-list td.wrong {
   background-image: url(../../images/wrong.svg);
   background-repeat: no-repeat;
   background-size: 24px auto;
   background-position: 10px 10px;
 }
 
-.quiz-questions-list td.correct-answer {
+.quiz-questions-list td.correct {
   background-image: url(../../images/correct.svg);
   background-repeat: no-repeat;
   background-size: 24px auto;
   background-position: 10px 10px;
+  padding-bottom: 20px;
 }
 
 .quiz-questions-list .gadwal-question .question-body span {
@@ -220,7 +219,7 @@ a[href="http://somee.com"]
 }
 
 .quiz-questions-list .question {
-  padding: 25px 10px;
+  padding: 25px 10px 5px;
 }
 
 .question-number {
@@ -322,6 +321,33 @@ d-block {
 
 .mt-6 {
   margin-top: 50px;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mb-1 {
+  margin-bottom: 8px;
+}
+.mb-2 {
+  margin-bottom: 16px;
+}
+
+.mb-3 {
+  margin-bottom: 24px;
+}
+
+.mb-4 {
+  margin-bottom: 32px;
+}
+
+.mb-5 {
+  margin-bottom: 40px;
+}
+
+.mb-6 {
+  margin-bottom: 50px;
 }
 
 .mr-1 {

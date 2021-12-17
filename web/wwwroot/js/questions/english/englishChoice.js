@@ -143,17 +143,18 @@
       return html;
     }
     return (
-      '<div id="answer" class="' +
+      '<div class="text-left"><img class="english-word audio" word="' +
+      this.word.word +
+      '" src="https://cdn0.iconfinder.com/data/icons/essentials-solid-glyphs-vol-1/100/Sound-Volume-Audio-128.png"/></div>' +
+      '<div id="answer" class="col-12 ' +
       this.getTextClass() +
+      '">إجابتك: <span class="' +
       (this.userAnswer == this.answer
         ? " correct-answer d-inline"
         : " wrong-answer") +
       '">' +
       this.userAnswer +
-      "</div>" +
-      '<div><img class="english-word audio" word="' +
-      this.word.word +
-      '" src="https://cdn0.iconfinder.com/data/icons/essentials-solid-glyphs-vol-1/100/Sound-Volume-Audio-128.png"/></div>'
+      "</span></div>"
     );
   }
 }

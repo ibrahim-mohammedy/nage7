@@ -110,7 +110,7 @@
   getReportHtml() {
     var html = "";
     html += '<div class="question">';
-    html += '<div class="question-body">';
+    html += '<div class="question-body row">';
     html += this.getBody();
     html += this.getAnswerHtml();
     html += "</div> ";

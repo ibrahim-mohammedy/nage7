@@ -266,7 +266,7 @@ class Quiz {
     });
     $(".english-word.audio").click(function () {
       var word = $(this).attr("word");
-      word =  Utilities.cleanWord(word);
+      word = Utilities.cleanWord(word);
       var player = new Audio("../../content/sound/english/" + word + "/0.mp3");
       player.play();
     });
@@ -279,21 +279,24 @@ class Quiz {
     html += "    </div>";
     html += '    <div class="panel-body">';
     html += "<table>";
-    html += "<tr><th>السؤال</th><th>الإجابة الصحيحة</th></tr>";
     for (var i = 0; i < self.questions.length; i++) {
       html += "<tr>";
-      html += "<td>";
+      html +=
+        '<td class="' +
+        (self.questions[i].getScore() < 1 ? "wrong" : "correct") +
+        '">';
       html += '<div class="question-number">' + (i + 1) + " )</div>";
+      html +=
+        '<div class="question-title">' +
+        self.questions[self.currentQuestion].title +
+        "</div>";
       html += self.questions[i].getReportHtml();
-      html += "</td>";
       if (self.questions[i].getScore() < 1) {
         html +=
-          '<td class="wrong-answer"><div class="report-correct-answer">' +
-          self.questions[i].answer +
-          "</div></td>";
-      } else {
-        html += '<td class="correct-answer"></td>';
+          '<div class="mb-2 report-correct-answer">الإجابة الصحيحة: <span class="correct-answer">';
+        html += self.questions[i].answer + "</span></div>";
       }
+      html += "</td>";
 
       html += "</tr>";
     }

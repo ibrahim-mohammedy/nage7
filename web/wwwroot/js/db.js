@@ -91,7 +91,7 @@
               new EnglishWord(5, "I'm", "أنا أكون", false, false),
               new EnglishWord(
                 6,
-                "You're / You are",
+                "You're",
                 "أنت تكون / أنتم تكونون",
                 false,
                 false

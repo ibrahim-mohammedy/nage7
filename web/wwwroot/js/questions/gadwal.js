@@ -75,7 +75,7 @@
   getReportHtml() {
     var html = "";
     html += '<div class="gadwal-question">';
-    html += '<div class="question-body">';
+    html += '<div class="question-body row">';
     html += '<span class="lateef">' + this.firstNumber + "</span>";
     html += '<span class="op">×</span>';
     html += '<span class="lateef">' + this.secondNumber + "</span>";
