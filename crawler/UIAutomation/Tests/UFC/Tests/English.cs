@@ -22,7 +22,7 @@ namespace UIAutomation.Tests.UFC.Tests.Groups
         public void CrawlImages_English()
         {
             string imagesDir = @"C:\Projects\nage7\web\wwwroot\content\images\english";
-            string wordsFile = @"C:\Projects\nage7\data\media\prime1\english\all-words.txt";
+            string wordsFile = @"C:\Projects\nage7\data\media\prime3\english\all-words.txt";
             WebClient client = new WebClient();
             Random random = new Random();
             CustomDriver driver = null;
@@ -32,11 +32,7 @@ namespace UIAutomation.Tests.UFC.Tests.Groups
                 {
                     string cleanWord = CleanWord(word);
                     string wordDir = Path.Combine(imagesDir, cleanWord);
-                    if (Directory.Exists(wordDir))
-                    {
-                        Thread.Sleep(random.Next(500, 3000));
-                        continue;
-                    }
+                    if (Directory.Exists(wordDir) && Directory.GetFiles(wordDir).Length >= 10) continue;
 
                     if (string.IsNullOrEmpty(cleanWord)) continue;
                     var chromeDriverService = ChromeDriverService.CreateDefaultService();

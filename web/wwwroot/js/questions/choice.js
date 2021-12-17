@@ -17,8 +17,8 @@
   getOptionsClass() {
     return "option";
   }
-  getOptions() {
-    return [];
+  getRandomAnswer() {
+    return '';
   }
 
   getAnswerHtml() {
@@ -38,8 +38,25 @@
 
   getBody() {}
 
+  getRandomAnswer() {}
+
+  initOptions() {
+    this.options = [];
+    this.options.push(this.answer);
+    while (this.options.length < this.optionsCount) {
+      const randomAnswer = this.getRandomAnswer();
+      if (
+        randomAnswer == this.answer ||
+        this.options.indexOf(randomAnswer) != -1
+      )
+        continue;
+      this.options.push(randomAnswer);
+    }
+    this.options = this.options.sort((a, b) => 0.5 - Math.random());
+  }
+
   getHtml = function () {
-    if (this.options.length == 0) this.options = this.getOptions();
+    if (this.options.length == 0) this.initOptions();
     var html = "";
     html += '<div class="question">';
     html += '<div class="question-body">';
@@ -47,7 +64,8 @@
     if (!this.answerIsInBody) html += this.getAnswerHtml();
     html += "</div> ";
     html +=
-      '<div class="question-options ' + this.getOptionsClass()+
+      '<div class="question-options ' +
+      this.getOptionsClass() +
       (this.canAnswer ? "" : "disabled") +
       '">';
     for (var i = 0; i < this.optionsCount; i++) {

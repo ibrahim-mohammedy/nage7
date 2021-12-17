@@ -39,7 +39,7 @@
   }
 
   getTextClass() {
-    return this.translationDirection == TranslationDirection.ArabicEnglish
+    return this.translationDirection == TranslationDirection.EnglishArabic
       ? "english-text"
       : "arabic-text";
   }
@@ -76,22 +76,12 @@
   getOptionsClass() {
     return this.getTextClass();
   }
-  getOptions() {
+  getRandomAnswer() {
     var allWords = this.getAllWord();
-    var options = new Array();
-    options.push(this.answer);
-    while (options.length < this.optionsCount) {
-      const randomIndex =
-        Math.round(Math.random() * 100000000) % allWords.length;
-      if (allWords[randomIndex].word == this.word) continue;
-      options.push(
-        this.translationDirection == TranslationDirection.ArabicEnglish
-          ? allWords[randomIndex].word
-          : allWords[randomIndex].translation
-      );
-    }
-    options = options.sort((a, b) => 0.5 - Math.random());
-    return options;
+    const randomIndex = Math.round(Math.random() * 100000000) % allWords.length;
+    return this.translationDirection == TranslationDirection.ArabicEnglish
+      ? allWords[randomIndex].word
+      : allWords[randomIndex].translation;
   }
 
   getBody = function () {
@@ -110,9 +100,9 @@
       '/0.jpg"></div>';
     return html;
   };
-  
+
   getHtml = function () {
-    if (this.options.length == 0) this.options = this.getOptions();
+    if (this.options.length == 0) this.initOptions();
     var html = "";
     html += '<div class="question">';
     html += '<div class="question-body row">';

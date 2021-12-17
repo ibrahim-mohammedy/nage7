@@ -18,19 +18,11 @@
     return "circles";
   }
 
-  getOptions() {
-    var options = new Array();
-    options.push(this.answer);
-    for (var i = 0; i < this.optionsCount - 1; i++) {
-      options.push(
-        this.getRandomNumber(
-          Math.max(1, this.answer - this.answer),
-          this.answer + this.answer
-        )
-      );
-    }
-    options = options.sort((a, b) => 0.5 - Math.random());
-    return options;
+  getRandomAnswer() {
+    return this.getRandomNumber(
+      Math.max(1, this.answer - this.answer),
+      this.answer + this.answer
+    );
   }
 
   getMaxNumberLength() {
