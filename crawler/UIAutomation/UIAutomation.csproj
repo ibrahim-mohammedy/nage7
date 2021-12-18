@@ -202,7 +202,7 @@
     <Compile Include="Tests\Dictonary.cs" />
     <Compile Include="API\IFX.cs" />
     <Compile Include="Tests\UFC\Test.cs" />
-    <Compile Include="Tests\UFC\Tests\English.cs" />
+    <Compile Include="Tests\English.cs" />
     <Compile Include="Tests\UFC\InterFAXUser.cs" />
     <Compile Include="Utils_Misc\Base.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -459,16 +459,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <None Include="UploadFiles\ContactList-Import-NoRowHeader.csv" />
-    <None Include="UploadFiles\ContactList-Import-RowHeader-Duplicates.csv" />
-    <None Include="UploadFiles\ContactList-Import-RowHeader.csv" />
-    <None Include="UploadFiles\ContactList-1000-RowHeader.csv" />
-    <None Include="UploadFiles\datasource-empty.csv" />
-    <None Include="UploadFiles\datasource-us-cities-no-headers.csv" />
-    <None Include="UploadFiles\datasource-us-cities.csv" />
-    <None Include="UploadFiles\lookup-data.csv" />
-    <None Include="UploadFiles\test.csv" />
-    <None Include="UploadFiles\ContactList-Export.csv" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
@@ -514,7 +504,9 @@
     <WCFMetadataStorage Include="Connected Services\InterFAXAdmin\" />
     <WCFMetadataStorage Include="Connected Services\InterFAXUtils\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Tests\UFC\Tests\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

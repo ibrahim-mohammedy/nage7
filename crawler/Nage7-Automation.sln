@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIAutomation", "UIAutomatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIBuildExecutionList", "UIBuildExecutionList\UIBuildExecutionList.csproj", "{ACFDBDA7-C03B-4201-985F-C3F03529CE0D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomationUI", "AutomationUI\AutomationUI.csproj", "{B97BF285-75DE-46DD-97DD-F6D3F9931DB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{ACFDBDA7-C03B-4201-985F-C3F03529CE0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACFDBDA7-C03B-4201-985F-C3F03529CE0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACFDBDA7-C03B-4201-985F-C3F03529CE0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B97BF285-75DE-46DD-97DD-F6D3F9931DB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B97BF285-75DE-46DD-97DD-F6D3F9931DB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B97BF285-75DE-46DD-97DD-F6D3F9931DB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B97BF285-75DE-46DD-97DD-F6D3F9931DB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

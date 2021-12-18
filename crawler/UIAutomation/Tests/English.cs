@@ -15,14 +15,11 @@ using UIAutomation.Utils_Selenium;
 
 namespace UIAutomation.Tests.UFC.Tests.Groups
 {
-    public class English : Test
+    public class EnglishCrawler
     {
-        [Test, TestOf("")]
-        [Parallelizable]
-        public void CrawlImages_English()
+        public void CrawlImages_English(string imagesDir = @"C:\Projects\nage7\web\wwwroot\content\images\english",
+            string wordsFile = @"C:\Projects\nage7\data\media\prime3\english\all-words.txt")
         {
-            string imagesDir = @"C:\Projects\nage7\web\wwwroot\content\images\english";
-            string wordsFile = @"C:\Projects\nage7\data\media\prime3\english\all-words.txt";
             WebClient client = new WebClient();
             Random random = new Random();
             CustomDriver driver = null;
@@ -143,12 +140,8 @@ namespace UIAutomation.Tests.UFC.Tests.Groups
             return "";
         }
 
-        [Test, TestOf("")]
-        [Parallelizable]
-        public void TextToSpeech_English()
+        public void TextToSpeech_English(string soundsDir = @"C:\Projects\nage7\web\wwwroot\content\sound\english", string wordsFile = @"C:\Projects\nage7\data\media\prime3\english\all-words.txt")
         {
-            string soundsDir = @"C:\Projects\nage7\web\wwwroot\content\sound\english";
-            string wordsFile = @"C:\Projects\nage7\data\media\prime3\english\all-words.txt";
             WebClient client = new WebClient();
             Random random = new Random();
             List<KeyValuePair<string, string>> sounds = new List<KeyValuePair<string, string>>();
@@ -158,10 +151,10 @@ namespace UIAutomation.Tests.UFC.Tests.Groups
             //sounds.Add(new KeyValuePair<string, string>("en-US-Standard-E", "0"));
             //sounds.Add(new KeyValuePair<string, string>("en-US-Standard-E", "0"));
             //sounds.Add(new KeyValuePair<string, string>("Salli_Female", "1"));
-            //sounds.Add(new KeyValuePair<string, string>("Joanna_Male", "1"));
-            //sounds.Add(new KeyValuePair<string, string>("Matthew_Male", "1"));
-            //sounds.Add(new KeyValuePair<string, string>("Ivy_Female", "1"));
-            //sounds.Add(new KeyValuePair<string, string>("Justin_Male", "1"));
+            ////sounds.Add(new KeyValuePair<string, string>("Joanna_Male", "1"));
+            //sounds.Add(new KeyValuePair<string, string>("Matthew_Male", "0"));
+            ////sounds.Add(new KeyValuePair<string, string>("Ivy_Female", "1"));
+            ////sounds.Add(new KeyValuePair<string, string>("Justin_Male", "1"));
             //sounds.Add(new KeyValuePair<string, string>("Kendra_Female", "1"));
             //sounds.Add(new KeyValuePair<string, string>("Kimberly_Female", "1"));
             //sounds.Add(new KeyValuePair<string, string>("Joey_Male", "1"));
@@ -180,6 +173,9 @@ namespace UIAutomation.Tests.UFC.Tests.Groups
                     if (string.IsNullOrEmpty(cleanWord)) continue;
                     for (int i = 0; i < sounds.Count; i++)
                     {
+                        string targetPath = Path.Combine(wordDir, i + ".mp3");
+                        if (File.Exists(targetPath)) continue;
+
                         string response = client.DownloadString($"https://freetts.com/Home/PlayAudio?Language=en-US&Voice={sounds[i].Key}&TextMessage={word}&type={sounds[i].Value}");
                         JObject json = JObject.Parse(response);
                         string id = json["id"].Value<string>();
@@ -196,7 +192,7 @@ namespace UIAutomation.Tests.UFC.Tests.Groups
                         byte[] binaryData = bytes.ToArray(); ;
 
                         if (binaryData.Length == 0) continue;
-                        string targetPath = Path.Combine(wordDir, i + ".mp3");
+
                         Thread.Sleep(new Random().Next(5000, 7000));
                         File.WriteAllBytes(targetPath, binaryData);
                     }
