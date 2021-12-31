@@ -21,7 +21,5 @@
     </Prod>
   </EnvironmentInformation>
   <ExecutionList>
-    <CrawlImages_English persona="admin" />
-    <TextToSpeech_English persona="admin" />
   </ExecutionList>
 </UIAutomation>

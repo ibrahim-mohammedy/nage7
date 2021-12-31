@@ -78,10 +78,21 @@
   }
   getRandomAnswer() {
     var allWords = this.getAllWord();
-    const randomIndex = Math.round(Math.random() * 100000000) % allWords.length;
-    return this.translationDirection == TranslationDirection.ArabicEnglish
-      ? allWords[randomIndex].word
-      : allWords[randomIndex].translation;
+    while (true) {
+      const randomIndex =
+        Math.round(Math.random() * 100000000) % allWords.length;
+      const option =
+        this.translationDirection == TranslationDirection.ArabicEnglish
+          ? allWords[randomIndex].word
+          : allWords[randomIndex].translation;
+
+      if (!this.cach[option] || this.cach[option] > 5) {
+        this.cach[option] = 1;
+        return option;
+      }
+
+      this.cach[option]++;
+    }
   }
 
   getBody = function () {

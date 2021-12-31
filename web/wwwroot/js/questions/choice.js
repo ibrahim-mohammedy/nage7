@@ -12,13 +12,11 @@
   onAnswer = null;
   answerIsInBody = false;
   circleOptions = true;
+  cach = new Object();
   constructor() {}
 
   getOptionsClass() {
     return "option";
-  }
-  getRandomAnswer() {
-    return '';
   }
 
   getAnswerHtml() {
