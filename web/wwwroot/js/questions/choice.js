@@ -11,7 +11,6 @@
   canAnswer = true;
   onAnswer = null;
   answerIsInBody = false;
-  circleOptions = true;
   cach = new Object();
   constructor() {}
 
@@ -41,6 +40,7 @@
   initOptions() {
     this.options = [];
     this.options.push(this.answer);
+    this.options.push(this.answer.split("").reverse().join(""));
     while (this.options.length < this.optionsCount) {
       const randomAnswer = this.getRandomAnswer();
       if (
@@ -53,7 +53,7 @@
     this.options = this.options.sort((a, b) => 0.5 - Math.random());
   }
 
-  getHtml = function () {
+  getHtml() {
     if (this.options.length == 0) this.initOptions();
     var html = "";
     html += '<div class="question">';
@@ -72,7 +72,7 @@
     html += "</div> ";
     html += "</div>";
     return html;
-  };
+  }
 
   initEvents() {
     var self = this;
@@ -114,5 +114,11 @@
     html += "</div> ";
     html += "</div>";
     return html;
+  }
+
+  getFormattedCorrectAnswer() {
+    return (
+      'الإجابة الصحيحة: <span class="correct-answer">' + this.answer + "</span>"
+    );
   }
 }

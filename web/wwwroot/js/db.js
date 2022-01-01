@@ -212,7 +212,7 @@
               new EnglishWord(75, "Face", "وجه", true, false),
               new EnglishWord(76, "Eye", "عين", true, false),
               new EnglishWord(77, "Nose", "أنف", true, false),
-              new EnglishWord(78, "Mouse", "فم", true, false),
+              new EnglishWord(78, "Mouth", "فم", true, false),
               new EnglishWord(79, "Ear", "أذن", true, false),
               new EnglishWord(80, "Hand", "يد", true, false),
               new EnglishWord(81, "Hair", "شعر", true, false),
@@ -1343,7 +1343,7 @@
                 false,
                 false
               ),
-              new EnglishWord(0, "smile", "يبتيم / ابتسامة", false, true),
+              new EnglishWord(0, "smile", "يبتسم / ابتسامة", false, true),
               new EnglishWord(
                 0,
                 "smile and be happy",

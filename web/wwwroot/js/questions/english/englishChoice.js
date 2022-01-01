@@ -19,7 +19,6 @@
     this.subjectId = _subjectId;
     this.lessonsIds = _lessonsIds;
     this.unitsIds = _unitsIds;
-    this.circleOptions = false;
     this.answerIsInBody = true;
     this.translationDirection = _translationDirection;
     this.userAnswer = "";
@@ -78,24 +77,25 @@
   }
   getRandomAnswer() {
     var allWords = this.getAllWord();
-    while (true) {
+    let option;
+    for (var i = 0; i < 10; i++) {
       const randomIndex =
         Math.round(Math.random() * 100000000) % allWords.length;
-      const option =
+      option =
         this.translationDirection == TranslationDirection.ArabicEnglish
           ? allWords[randomIndex].word
           : allWords[randomIndex].translation;
 
-      if (!this.cach[option] || this.cach[option] > 5) {
-        this.cach[option] = 1;
-        return option;
-      }
+      if (!this.cach[option] || this.cach[option] > 5) break;
 
       this.cach[option]++;
     }
+
+    this.cach[option] = 1;
+    return option;
   }
 
-  getBody = function () {
+  getBody() {
     var html = "";
     html +=
       '<div class="col col-lg-6 col-sm-6 col-md-6 col-xs-6 ' +
@@ -110,10 +110,11 @@
       this.word.word.toLowerCase().replace(/ /g, "-") +
       '/0.jpg"></div>';
     return html;
-  };
+  }
 
-  getHtml = function () {
+  getHtml() {
     if (this.options.length == 0) this.initOptions();
+
     var html = "";
     html += '<div class="question">';
     html += '<div class="question-body row">';
@@ -145,7 +146,7 @@
     html += "</div> ";
     html += "</div>";
     return html;
-  };
+  }
 
   getAnswerHtml() {
     if (!this.isAnswered) {

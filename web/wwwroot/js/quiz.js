@@ -12,6 +12,7 @@ class QuestionsTypes {
   static Division = 5;
   static ArabicEnglishChoice = 6;
   static EnglishArabicChoice = 7;
+  static EnglishComplete = 8;
 }
 
 class QuestionCategory {
@@ -207,6 +208,14 @@ class Quiz {
         this.lessonsIds
       );
 
+    if (type == QuestionsTypes.EnglishComplete)
+      return new EnglishCompleteQuestion(
+        this.yearId,
+        this.subjectId,
+        this.unitsIds,
+        this.lessonsIds
+      );
+
     return null;
   }
 
@@ -292,9 +301,8 @@ class Quiz {
         "</div>";
       html += self.questions[i].getReportHtml();
       if (self.questions[i].getScore() < 1) {
-        html +=
-          '<div class="mb-2 report-correct-answer">الإجابة الصحيحة: <span class="correct-answer">';
-        html += self.questions[i].answer + "</span></div>";
+        html += '<div class="mb-2 report-correct-answer">';
+        html += self.questions[i].getFormattedCorrectAnswer() + "</div>";
       }
       html += "</td>";
 

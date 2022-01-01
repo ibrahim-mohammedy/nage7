@@ -183,7 +183,7 @@
 }
 
 .questions-number {
-  width: 50px;
+  width: 75px;
   margin: 0px 4px;
   display: inline-block;
   vertical-align: middle;
@@ -207,16 +207,24 @@
 }
 
 .free-height {
-  height: initial!important;
+  height: initial !important;
 }
 
 .english-text {
   direction: ltr;
 }
 
+.capital {
+  text-transform: capitalize;
+}
+
 .english-word.audio {
   max-height: 24px;
   cursor: pointer;
+}
+
+.missing-character {
+  padding: 5px;
 }
 @media (max-width: 375px) {
   #quizOptions {
