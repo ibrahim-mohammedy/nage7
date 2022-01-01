@@ -5,12 +5,15 @@
   lessonsIds = [];
   translationDirection;
   word = null;
+  bodyClasses = "col col-lg-6 col-sm-6 col-md-6 col-xs-6";
+  optionsClasses = "col col-lg-6 col-sm-6 col-md-6 col-xs-6";
   constructor(
     _yearId,
     _subjectId,
     _unitsIds,
     _lessonsIds,
-    _translationDirection
+    _translationDirection,
+    _answerCanBeReversed = true
   ) {
     super();
 
@@ -19,6 +22,7 @@
     this.subjectId = _subjectId;
     this.lessonsIds = _lessonsIds;
     this.unitsIds = _unitsIds;
+    this.answerCanBeReversed=_answerCanBeReversed;
     this.answerIsInBody = true;
     this.translationDirection = _translationDirection;
     this.userAnswer = "";
@@ -118,7 +122,7 @@
     var html = "";
     html += '<div class="question">';
     html += '<div class="question-body row">';
-    html += '<div class="col col-lg-6 col-sm-6 col-md-6 col-xs-6">';
+    html += `<div class="${this.bodyClasses}">`;
     html += "<div>" + this.getWord() + "</div>";
     if (!this.answerIsInBody) html += this.getAnswerHtml();
     html +=
@@ -128,10 +132,9 @@
       Utilities.cleanWord(this.word.word) +
       '/0.jpg">';
     html += "</div>";
-    html +=
-      '<div class="col col-lg-6 col-sm-6 col-md-6 col-xs-6 ' +
-      this.getTextClass() +
-      '">';
+    html += `<div class="${this.optionsClasses}" 
+      ${this.getTextClass()}
+      '">`;
     html +=
       '<div class="question-options mt-0 ' +
       this.getOptionsClass() +

@@ -183,6 +183,8 @@ class Quiz {
         self.questions.push(self.createQuestion(questionType));
       }
     }
+
+    self.questions = self.questions.sort((a, b) => 0.5 - Math.random());
   }
 
   createQuestion(type) {

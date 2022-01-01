@@ -11,6 +11,7 @@
   canAnswer = true;
   onAnswer = null;
   answerIsInBody = false;
+  answerCanBeReversed = true;
   cach = new Object();
   constructor() {}
 
@@ -40,7 +41,9 @@
   initOptions() {
     this.options = [];
     this.options.push(this.answer);
-    this.options.push(this.answer.split("").reverse().join(""));
+    const answerReverse = this.answer.split("").reverse().join("");
+    if (this.answerCanBeReversed && answerReverse != this.answer)
+      this.options.push(answerReverse);
     while (this.options.length < this.optionsCount) {
       const randomAnswer = this.getRandomAnswer();
       if (
