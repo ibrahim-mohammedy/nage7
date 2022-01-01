@@ -25,14 +25,7 @@
 
 @section Scripts{
     <script>
-        var navigation = new UnitsLessonsNavigtion('mainArea', function (yearId, subjectId, selectedUitsIds, selectedLessonsIds) {
-            var quiz = new Quiz('mainArea', yearId, subjectId, selectedUitsIds, selectedLessonsIds);
-            quiz.questionsTypes.push(new QuestionCategory(QuestionsTypes.ArabicEnglishChoice, "اختر الترجمة الصحيحة - عربي انجليزي", 5));
-            quiz.questionsTypes.push(new QuestionCategory(QuestionsTypes.EnglishArabicChoice, "اختر الترجمة الصحيحة - انجليزي عربي", 5));
-            quiz.questionsTypes.push(new QuestionCategory(QuestionsTypes.EnglishComplete, "أكمل الترجمة - انجليزي عربي", 5));
-            quiz.show();
-
-        });
+        var navigation = new UnitsLessonsNavigtion('mainArea');
         $(function () {
             DB.initDB();
             navigation.showYears();

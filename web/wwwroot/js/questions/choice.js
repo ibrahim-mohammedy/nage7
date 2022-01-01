@@ -38,12 +38,19 @@
 
   getRandomAnswer() {}
 
+  addReverseAnswer() {
+    const answerReverse = this.answer.toString().split("").reverse().join("");
+    if (this.answerCanBeReversed && answerReverse != this.answer) {
+      if (typeof this.answer == "number")
+        this.options.push(parseInt(answerReverse));
+      else this.options.push(answerReverse);
+    }
+  }
+
   initOptions() {
     this.options = [];
     this.options.push(this.answer);
-    const answerReverse = this.answer.split("").reverse().join("");
-    if (this.answerCanBeReversed && answerReverse != this.answer)
-      this.options.push(answerReverse);
+    this.addReverseAnswer();
     while (this.options.length < this.optionsCount) {
       const randomAnswer = this.getRandomAnswer();
       if (

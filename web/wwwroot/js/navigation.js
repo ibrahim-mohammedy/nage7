@@ -10,7 +10,6 @@
   constructor(divId, _onStartCallback) {
     self = this;
     self.elementId = divId;
-    self.onStartCallback = _onStartCallback;
   }
 
   showYears() {
@@ -122,14 +121,30 @@
       self.lessonsIds =
         selectedLessonsIds == "" ? [] : selectedLessonsIds.split(",");
 
-      if (self.onStartCallback)
-        self.onStartCallback(
-          self.yearId,
-          self.subjectId,
-          self.unitsIds,
-          self.lessonsIds
-        );
+      self.onStartQuiz();
     });
+  }
+
+  onStartQuiz() {
+    var quiz = new Quiz(
+      "mainArea",
+      self.yearId,
+      self.subjectId,
+      self.unitsIds,
+      self.lessonsIds
+    );
+
+    var year = DB.years.find((x) => x.id == self.yearId);
+    var subject = year.subjects.find((x) => x.id == self.subjectId);
+    const units = subject.units.filter(
+      (x) => self.unitsIds.find((id) => id == x.id) != null
+    );
+
+    units.forEach((unit) => {
+      quiz.questionsTypes.push(...unit.questionsTypes);
+    });
+    quiz.questionsTypes.push(...subject.questionsTypes);
+    quiz.show();
   }
 
   updateBreadcrumb() {
