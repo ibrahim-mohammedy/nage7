@@ -78,6 +78,17 @@
   cursor: default;
 }
 
+.question-options .option.image-text {
+  display: block;
+  text-align: right;
+}
+
+.question-options .option.image-text img {
+  width: 50px;
+  max-height: 50px;
+  margin: 0 10px;
+}
+
 #answer {
   display: inline-block;
 }

@@ -186,14 +186,14 @@ a[href="http://somee.com"]
   font-size: 20px;
 }
 
-.quiz-questions-list td.wrong {
+.quiz-questions-list .wrong td {
   background-image: url(../../images/wrong.svg);
   background-repeat: no-repeat;
   background-size: 24px auto;
   background-position: 10px 10px;
 }
 
-.quiz-questions-list td.correct {
+.quiz-questions-list .correct td {
   background-image: url(../../images/correct.svg);
   background-repeat: no-repeat;
   background-size: 24px auto;
@@ -220,6 +220,18 @@ a[href="http://somee.com"]
 
 .quiz-questions-list .question {
   padding: 25px 10px 5px;
+}
+
+.quiz-questions-list.only-wrong-questions .correct {
+  display: none;
+}
+
+.quiz-questions-list .panel-footer {
+  border-top: 1px solid #c7c1c1;
+  text-align: right;
+}
+.quiz-questions-list .panel-footer label {
+  cursor: pointer;
 }
 
 .question-number {

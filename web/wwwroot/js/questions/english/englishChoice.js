@@ -172,6 +172,15 @@
       "</span></div>"
     );
   }
+
+  getWordByTranslation(translation){
+    var allWords = this.getAllWord();
+    for(var i=0;i<allWords.length;i++){
+      if(allWords[i].translation==translation) return allWords[i];
+    }
+
+    alert(translation);
+  }
 }
 
 class TranslationDirection {

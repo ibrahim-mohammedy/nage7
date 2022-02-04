@@ -153,6 +153,11 @@
                 "أكمل الترجمة - انجليزي عربي",
                 5
               ),
+              new QuestionCategory(
+                QuestionsTypes.EnglishListening,
+                "استمع واختر الترجمة",
+                5
+              ),
             ]
           ),
           new Unit(
@@ -2761,6 +2766,11 @@
             new QuestionCategory(
               QuestionsTypes.EnglishComplete,
               "أكمل الترجمة - انجليزي عربي",
+              5
+            ),
+            new QuestionCategory(
+              QuestionsTypes.EnglishListening,
+              "استمع واختر الترجمة",
               5
             ),
           ]

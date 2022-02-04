@@ -1,4 +1,5 @@
 ﻿class ChoiceQuestion {
+  id = "";
   title = "";
   firstNumber = 0;
   secondNumber = 0;
@@ -13,7 +14,9 @@
   answerIsInBody = false;
   answerCanBeReversed = true;
   cach = new Object();
-  constructor() {}
+  constructor() {
+    this.id = Utilities.generateUUID();
+  }
 
   getOptionsClass() {
     return "option";
@@ -84,7 +87,11 @@
     return html;
   }
 
+  initExtraEvents() {}
+
   initEvents() {
+    this.initExtraEvents();
+
     var self = this;
     $(".option").click(function (e) {
       if (!self.canAnswer) return;

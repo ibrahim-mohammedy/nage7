@@ -13,6 +13,7 @@ class QuestionsTypes {
   static ArabicEnglishChoice = 6;
   static EnglishArabicChoice = 7;
   static EnglishComplete = 8;
+  static EnglishListening = 9;
 }
 
 class QuestionCategory {
@@ -218,6 +219,14 @@ class Quiz {
         this.lessonsIds
       );
 
+    if (type == QuestionsTypes.EnglishListening)
+      return new EnglishListeningQuestion(
+        this.yearId,
+        this.subjectId,
+        this.unitsIds,
+        this.lessonsIds
+      );
+
     return null;
   }
 
@@ -281,6 +290,13 @@ class Quiz {
       var player = new Audio("../../content/sound/english/" + word + "/0.mp3");
       player.play();
     });
+    $("#showOnlyWrongQuestions").change(function () {
+      if ($(this).prop("checked")) {
+        $(".quiz-questions-list").addClass("only-wrong-questions");
+      } else {
+        $(".quiz-questions-list").removeClass("only-wrong-questions");
+      }
+    });
   }
 
   getReportHtml() {
@@ -291,11 +307,11 @@ class Quiz {
     html += '    <div class="panel-body">';
     html += "<table>";
     for (var i = 0; i < self.questions.length; i++) {
-      html += "<tr>";
       html +=
-        '<td class="' +
+        '<tr class="' +
         (self.questions[i].getScore() < 1 ? "wrong" : "correct") +
         '">';
+      html += "<td>";
       html += '<div class="question-number">' + (i + 1) + " )</div>";
       html +=
         '<div class="question-title">' +
@@ -312,6 +328,11 @@ class Quiz {
     }
     html += "</table>";
     html += "    </div> ";
+    html += '<div class="panel-footer">';
+    html += "        <label>";
+    html +=
+      '<input id="showOnlyWrongQuestions" type="checkbox" /> عرض الأسئلة الخاطئة فقط';
+    html += "        </label>";
     html += "</div>";
 
     return html;
@@ -357,7 +378,9 @@ class Quiz {
       self.questions[self.currentQuestion].title +
       "</div>";
     html +=
-      '<div class="question-body">' +
+      '<div class="question-body" question-id="' +
+      self.questions[self.currentQuestion].id +
+      '">' +
       self.questions[self.currentQuestion].getHtml() +
       "</div>";
     $("#questionArea").html(html);
