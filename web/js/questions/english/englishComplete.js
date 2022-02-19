@@ -105,7 +105,7 @@
     return (
       '<div class="text-left"><img class="english-word audio" word="' +
       this.word.word +
-      '" src="../../../images/sound.svg"/></div>' +
+      '" src="images/sound.svg"/></div>' +
       '<div id="answer" class="col-12 ' +
       this.getTextClass() +
       '">إجابتك: <span class="english-text">' +

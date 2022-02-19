@@ -109,8 +109,7 @@
       "</div>";
     html +=
       '<div class="col col-lg-6 col-sm-6 col-md-6 col-xs-6"><img src="' +
-      location.origin +
-      "/content/images/english/" +
+      "data/media/images/english/" +
       this.word.word.toLowerCase().replace(/ /g, "-") +
       '/0.jpg"></div>';
     return html;
@@ -127,8 +126,7 @@
     if (!this.answerIsInBody) html += this.getAnswerHtml();
     html +=
       '<img src="' +
-      location.origin +
-      "/content/images/english/" +
+     "data/media/images/english/" +
       Utilities.cleanWord(this.word.word) +
       '/0.jpg">';
     html += "</div>";

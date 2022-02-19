@@ -59,8 +59,7 @@
       html +=
         '<div class="option image-text text-right free-height">' +
         '<img src="' +
-        location.origin +
-        "/content/images/english/" +
+       "data/media/images/english/" +
         this.getWordByTranslation(this.options[i])
           .word.toLowerCase()
           .replace(/ /g, "-") +
@@ -82,7 +81,7 @@
     if (!questionBody) return;
     var word = $(questionBody).find(".listening-question").attr("word");
     word = Utilities.cleanWord(word);
-    SoundPlayer.play("../../content/sound/english/" + word + "/0.mp3", () => {
+    SoundPlayer.play("./data/media/sound/english/" + word + "/0.mp3", () => {
       setTimeout(() => {
         that.initExtraEvents();
       }, 3000);

@@ -187,14 +187,14 @@ a[href="http://somee.com"]
 }
 
 .quiz-questions-list .wrong td {
-  background-image: url(../../images/wrong.svg);
+  background-image: url(../images/wrong.svg);
   background-repeat: no-repeat;
   background-size: 24px auto;
   background-position: 10px 10px;
 }
 
 .quiz-questions-list .correct td {
-  background-image: url(../../images/correct.svg);
+  background-image: url(../images/correct.svg);
   background-repeat: no-repeat;
   background-size: 24px auto;
   background-position: 10px 10px;
