@@ -950,7 +950,7 @@
                 new EnglishWord(0, "donkey", "حمار", true, false),
                 new EnglishWord(0, "goat", "ماعز", true, false),
                 new EnglishWord(0, "point to", "يشير إلى", false, true),
-                new EnglishWord(0, "point", "يشير ", false, true),
+                new EnglishWord(0, "point", "يشير", false, true),
                 new EnglishWord(0, "ask", "يطلب", false, true),
                 new EnglishWord(0, "river", "نهر", true, false),
                 new EnglishWord(0, "balloons", "بالونات", true, false),
@@ -1054,7 +1054,7 @@
                 new EnglishWord(0, "don't", "لا تفعل", false, false),
                 new EnglishWord(0, "go by car", "أذهب بالسيارة", false, true),
                 new EnglishWord(0, "water", "ماء", true, false),
-                new EnglishWord(0, "fruit ", "فاكهة", true, false),
+                new EnglishWord(0, "fruit", "فاكهة", true, false),
                 new EnglishWord(0, "vegetables", "خضروات", true, false),
                 new EnglishWord(0, "hour", "ساعة", true, false),
                 new EnglishWord(0, "hours", "ساعات", true, false),
@@ -1182,7 +1182,7 @@
                 new EnglishWord(0, "eleven", "أحد عشر", false, false),
                 new EnglishWord(0, "twelve", "اثني عشر", false, false),
                 new EnglishWord(0, "the end", "النهاية", false, false),
-                new EnglishWord(0, "the first ", "الأول", false, false),
+                new EnglishWord(0, "the first", "الأول", false, false),
                 new EnglishWord(0, "How long is it?", "كم طوله؟", false, false),
                 new EnglishWord(0, "long", "طويل", false, false),
                 new EnglishWord(0, "millimeter", "ملليمتر", false, false),
@@ -1506,7 +1506,7 @@
                   false,
                   false
                 ),
-                new EnglishWord(0, "like", "يحب / مثل / شبه ", true, true),
+                new EnglishWord(0, "like", "يحب / مثل / شبه", true, true),
                 new EnglishWord(0, "job", "مهنة / وظيفة", true, false),
                 new EnglishWord(
                   0,
@@ -1529,7 +1529,7 @@
                   false,
                   false
                 ),
-                new EnglishWord(0, "work", "يعمل / شغل / عمل ", true, true),
+                new EnglishWord(0, "work", "يعمل / شغل / عمل", true, true),
                 new EnglishWord(
                   0,
                   "I work in a hospital",
@@ -1748,7 +1748,7 @@
                 new EnglishWord(
                   0,
                   "It's two thirty",
-                  "انها الثانية  وثلاثين ",
+                  "انها الثانية  وثلاثين",
                   false,
                   false
                 ),
@@ -1942,7 +1942,7 @@
                   false,
                   false
                 ),
-                new EnglishWord(0, "thirsty", "عطشان / متعطش ", true, false),
+                new EnglishWord(0, "thirsty", "عطشان / متعطش", true, false),
                 new EnglishWord(0, "She is thirsty", "هي متعطشة", false, false),
                 new EnglishWord(0, "We are happy", "نحن سعداء", false, false),
                 new EnglishWord(0, "Today", "اليوم", false, false),
@@ -2390,7 +2390,7 @@
                 new EnglishWord(0, "sort", "يرتب / يفرز", false, true),
                 new EnglishWord(0, "plant", "زرع", true, false),
                 new EnglishWord(0, "reuse", "يعيد استخدام", false, true),
-                new EnglishWord(0, "recycle", "يعيد تصنيع ", false, true),
+                new EnglishWord(0, "recycle", "يعيد تصنيع", false, true),
                 new EnglishWord(0, "pollute", "يلوث", false, true),
                 new EnglishWord(0, "bird", "عصفور", true, false),
                 new EnglishWord(0, "birds", "طيور", true, false),
