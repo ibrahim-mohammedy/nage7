@@ -54,13 +54,16 @@
     this.options = [];
     this.options.push(this.answer);
     this.addReverseAnswer();
+    var tries = 0;
     while (this.options.length < this.optionsCount) {
       const randomAnswer = this.getRandomAnswer();
       if (
         randomAnswer == this.answer ||
         this.options.indexOf(randomAnswer) != -1
-      )
-        continue;
+      ) {
+        if (tries++ < 20) continue;
+      }
+
       this.options.push(randomAnswer);
     }
     this.options = this.options.sort((a, b) => 0.5 - Math.random());
