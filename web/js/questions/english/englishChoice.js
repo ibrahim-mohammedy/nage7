@@ -22,7 +22,7 @@
     this.subjectId = _subjectId;
     this.lessonsIds = _lessonsIds;
     this.unitsIds = _unitsIds;
-    this.answerCanBeReversed=_answerCanBeReversed;
+    this.answerCanBeReversed = _answerCanBeReversed;
     this.answerIsInBody = true;
     this.translationDirection = _translationDirection;
     this.userAnswer = "";
@@ -77,7 +77,9 @@
   }
 
   getOptionsClass() {
-    return this.getTextClass();
+    return this.translationDirection == TranslationDirection.EnglishArabic
+      ? "arabic-text"
+      : "english-text";
   }
   getRandomAnswer() {
     var allWords = this.getAllWord();
@@ -126,12 +128,12 @@
     if (!this.answerIsInBody) html += this.getAnswerHtml();
     html +=
       '<img src="' +
-     "data/media/images/english/" +
+      "data/media/images/english/" +
       Utilities.cleanWord(this.word.word) +
       '/0.jpg">';
     html += "</div>";
     html += `<div class="${this.optionsClasses}" 
-      ${this.getTextClass()}
+      ${this.getOptionsClass()}
       '">`;
     html +=
       '<div class="question-options mt-0 ' +
@@ -171,10 +173,10 @@
     );
   }
 
-  getWordByTranslation(translation){
+  getWordByTranslation(translation) {
     var allWords = this.getAllWord();
-    for(var i=0;i<allWords.length;i++){
-      if(allWords[i].translation==translation) return allWords[i];
+    for (var i = 0; i < allWords.length; i++) {
+      if (allWords[i].translation == translation) return allWords[i];
     }
 
     alert(translation);

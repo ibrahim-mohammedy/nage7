@@ -250,3 +250,157 @@ On
 Behind
 Insect
 Umbrella
+She's an engineer
+engineer
+doctor
+dentist
+teacher
+vet
+soldier
+polic Officer
+firefighter
+look
+He's a firefighter
+He's a dentist
+She's a vet
+He's an engineer
+Exit
+egg
+eggs
+lamp
+leaf
+lemon
+lamb
+I want to be a doctor
+I want to be an engineer
+I want to be a soldier
+I want to be a firefighter
+I want to be a police officer
+want
+live 
+I live in cairo
+My name is Ahmed
+I am seven years old
+bread
+wheat
+pizza
+T-shirt
+fabric
+cotton
+flour
+is made of
+T-shirt is made of fabric
+fabric is made of cotton
+flour is made of wheat
+leg
+rainy
+It's rainy
+windy
+cloudy
+hot
+The weather
+sunny
+cold
+It's rainy today
+umbrella
+I like rainy days
+It's windy
+It's cold today
+It's hot today
+I like sunny days
+mom
+moon
+map
+watch
+window
+blue
+green
+orange
+purple
+yellow
+red
+make
+rainbow
+colorful
+sky
+clouds
+rain
+sun
+winter
+fall
+summer
+spring
+Alexandria
+Cairo
+Port Said
+Luxor
+Aswan
+Hello
+What's is?
+It's a cloud
+Is it a red pen?
+No, It isn't
+Yes, it is 
+Let's play outside
+look outside
+Let's go shopping
+jacket
+skirt
+shoes
+sweater
+pants
+socks
+zipper
+T-shirt
+clothes
+colors
+It's a jacket
+They are socks
+What are these?
+They're yellow
+It's a skirt
+jump
+jam
+violin
+van
+pajamas
+They're shoes
+help
+put away
+please
+let's
+tidy up
+please help me
+Let's put the clothes away
+Is this your skirt?
+Yes, it is 
+Are these your pants?
+Yes, they are my pants
+Is this my T-shirt?
+help
+I can see a rocket
+rocket
+train
+yacht
+astronaut
+motorbike
+bus
+car
+bicycle
+truck
+What can you see?
+I can see a truck and a bicycle
+I can see a bus
+I can see two motorbikes
+One car
+Two cars
+I can see
+fox
+box
+zoo
+zebra
+yogurt
+stop
+go
+cross the road
+traffic sign

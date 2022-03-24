@@ -42,6 +42,8 @@
   getRandomAnswer() {}
 
   addReverseAnswer() {
+    if (this.answer.toString().indexOf(" ") != -1) return;
+    
     const answerReverse = this.answer.toString().split("").reverse().join("");
     if (this.answerCanBeReversed && answerReverse != this.answer) {
       if (typeof this.answer == "number")
@@ -135,6 +137,8 @@
     html += "</div>";
     return html;
   }
+
+  onReportDisplayed() {}
 
   getFormattedCorrectAnswer() {
     return (

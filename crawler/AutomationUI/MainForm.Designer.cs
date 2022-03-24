@@ -83,7 +83,7 @@ namespace AutomationUI
             this.txtWordsFilePath.Name = "txtWordsFilePath";
             this.txtWordsFilePath.Size = new System.Drawing.Size(219, 20);
             this.txtWordsFilePath.TabIndex = 4;
-            this.txtWordsFilePath.Text = "C:\\Projects\\nage7\\data\\media\\prime3\\english\\all-words.txt";
+            this.txtWordsFilePath.Text = "C:\\Projects\\nage7\\web\\data\\e-books\\G1\\english\\all-words.txt";
             // 
             // txtOutputDir
             // 
@@ -91,7 +91,7 @@ namespace AutomationUI
             this.txtOutputDir.Name = "txtOutputDir";
             this.txtOutputDir.Size = new System.Drawing.Size(219, 20);
             this.txtOutputDir.TabIndex = 5;
-            this.txtOutputDir.Text = "C:\\Projects\\nage7\\web\\wwwroot\\content";
+            this.txtOutputDir.Text = "C:\\Projects\\nage7\\web\\data\\media";
             // 
             // btnBrowseWordsFile
             // 

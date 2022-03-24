@@ -68,10 +68,6 @@
     return this.userAnswer == this.answer ? 1 : 0;
   }
 
-  getRandomNumber(min, max) {
-    return (Math.round(Math.random() * 100) % (max - min + 1)) + min;
-  }
-
   getReportHtml() {
     var html = "";
     html += '<div class="gadwal-question">';

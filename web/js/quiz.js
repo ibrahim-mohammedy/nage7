@@ -14,6 +14,7 @@ class QuestionsTypes {
   static EnglishArabicChoice = 7;
   static EnglishComplete = 8;
   static EnglishListening = 9;
+  static Time = 10;
 }
 
 class QuestionCategory {
@@ -227,6 +228,8 @@ class Quiz {
         this.lessonsIds
       );
 
+    if (type == QuestionsTypes.Time) return new TimeQuestion();
+
     return null;
   }
 
@@ -297,6 +300,8 @@ class Quiz {
         $(".quiz-questions-list").removeClass("only-wrong-questions");
       }
     });
+
+    this.onReportDisplayed();
   }
 
   getReportHtml() {
@@ -336,6 +341,10 @@ class Quiz {
     html += "</div>";
 
     return html;
+  }
+  
+  onReportDisplayed(){
+    for (var i = 0; i < self.questions.length; i++) self.questions.onReportDisplayed();
   }
 
   onUserAnswer(event) {

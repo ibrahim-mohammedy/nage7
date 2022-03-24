@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home page - ناجح</title>
@@ -10,30 +9,28 @@
     <link rel="stylesheet" href="./css/site.css" />
     <link href="./css/navigation.css" rel="stylesheet" />
     <link href="./css/questions/questions.css" rel="stylesheet" />
-</head>
+  </head>
 
-<body>
+  <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="top-menu mt-1">
-            <div><a href="./">الرئيسية</a></div>
-            <div><a href="./quiz.html">تدريبات</a></div>
-            <div><a href="./exams.html">اختبارات</a></div>
-        </div>
-        <img class="logo" src="./images/logo2.png" />
+      <div class="top-menu mt-1">
+        <div><a href="./">الرئيسية</a></div>
+        <div><a href="./quiz.html">تدريبات</a></div>
+        <div><a href="./exams.html">اختبارات</a></div>
+      </div>
+      <img class="logo" src="./images/logo2.png" />
     </nav>
 
     <div class="container body-content">
-        <div class="content-area">
+      <div class="content-area">
+        <h3 class="page-title">تدريبات</h3>
+        <div id="mainArea"></div>
+      </div>
 
-            <h3 class="page-title">تدريبات</h3>
-            <div id="mainArea">
-            </div>
-        </div>
-
-        <hr />
-        <footer>
-            <p>ناجح - &copy; 2021</p>
-        </footer>
+      <hr />
+      <footer>
+        <p>ناجح - &copy; 2021</p>
+      </footer>
     </div>
 
     <script src="./lib/jquery/dist/jquery.js"></script>
@@ -57,14 +54,15 @@
     <script src="./js/questions/english/EnglishArabicChoice.js"></script>
     <script src="./js/questions/english/englishComplete.js"></script>
     <script src="./js/questions/english/englishListening.js"></script>
+    <script src="./js/questions/time.js"></script>
     <script type="text/javascript" src="./js/quiz.js"></script>
 
     <script>
-        var navigation = new UnitsLessonsNavigtion('mainArea');
-        $(function () {
-            DB.initDB();
-            navigation.showYears();
-        });
+      var navigation = new UnitsLessonsNavigtion("mainArea");
+      $(function () {
+        DB.initDB();
+        navigation.showYears();
+      });
     </script>
-</body>
+  </body>
 </html>

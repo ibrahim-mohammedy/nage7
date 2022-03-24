@@ -223,6 +223,12 @@
 
 .english-text {
   direction: ltr;
+  direction: ltr;
+  text-transform: capitalize;
+}
+
+.english-text {
+  font-family: initial;
 }
 
 .capital {
@@ -232,6 +238,10 @@
 .english-word.audio {
   max-height: 24px;
   cursor: pointer;
+}
+
+.question-options.time-question {
+  direction: ltr;
 }
 
 .missing-character {
