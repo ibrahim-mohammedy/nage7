@@ -1,0 +1,27 @@
+.year,
+.subject {
+  padding: 10px;
+  border: 1px solid #c7c7c7;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.year:hover,
+.subject:hover {
+  background: #dbdbdb;
+}
+
+.unit {
+  border: 1px solid #c7c7c7;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.unit label, .lesson label{
+  cursor: pointer;
+}
+
+.units-list input[type="checkbox"] {
+  margin: 10px;
+}
