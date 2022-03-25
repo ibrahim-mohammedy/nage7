@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Net;
+using System.Text.RegularExpressions;
 using System.Threading;
 using UIAutomation.Utils_Selenium;
 
@@ -206,9 +207,12 @@ namespace UIAutomation.Tests.UFC.Tests.Groups
             }
         }
 
-        string CleanWord(string word)
+        private string CleanWord(string word)
         {
-            return word.ToLower().Trim().Replace(" ", "-").Replace("?", "").Replace("؟", "").Replace("/", "-");
+            string cleanWord = Regex.Replace(word, "\\W+", "-");
+            cleanWord = cleanWord.Trim('-');
+
+            return cleanWord.ToLower();
         }
     }
 }

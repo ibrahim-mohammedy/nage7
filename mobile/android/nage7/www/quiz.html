@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page - ناجح</title>
+
+    <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/site.css" />
+    <link href="./css/navigation.css" rel="stylesheet" />
+    <link href="./css/questions/questions.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="top-menu mt-1">
+        <div><a href="./">الرئيسية</a></div>
+        <div><a href="./quiz.html">تدريبات</a></div>
+        <div><a href="./exams.html">اختبارات</a></div>
+      </div>
+      <img class="logo" src="./images/logo2.png" />
+    </nav>
+
+    <div class="container body-content">
+      <div class="content-area">
+        <h3 class="page-title">تدريبات</h3>
+        <div id="mainArea"></div>
+      </div>
+
+      <hr />
+      <footer>
+        <p>ناجح - &copy; 2021</p>
+      </footer>
+    </div>
+
+    <script src="./lib/jquery/dist/jquery.js"></script>
+    <script src="./lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18"></script>
+
+    <script src="./js/utils.js"></script>
+    <script src="./js/soundPlayer.js"></script>
+    <script src="./js/db.js"></script>
+    <script src="./js/navigation.js"></script>
+    <script src="./js/feedback.js"></script>
+    <script src="./js/questions/choice.js"></script>
+    <script src="./js/questions/kasr.js"></script>
+    <script src="./js/questions/gadwal.js"></script>
+    <script src="./js/questions/addition.js"></script>
+    <script src="./js/questions/multiplication.js"></script>
+    <script src="./js/questions/division.js"></script>
+    <script src="./js/questions/subtraction.js"></script>
+    <script src="./js/questions/english/englishChoice.js"></script>
+    <script src="./js/questions/english/arabicEnglishChoice.js"></script>
+    <script src="./js/questions/english/englishArabicChoice.js"></script>
+    <script src="./js/questions/english/englishComplete.js"></script>
+    <script src="./js/questions/english/englishListening.js"></script>
+    <script src="./js/questions/time.js"></script>
+    <script type="text/javascript" src="./js/quiz.js"></script>
+
+    <script>
+      var navigation = new UnitsLessonsNavigtion("mainArea");
+      $(function () {
+        DB.initDB();
+        navigation.showYears();
+      });
+    </script>
+  </body>
+</html>
