@@ -13,9 +13,11 @@
   }
 
   showYears() {
+    console.log("Show years...");
     var html = '<div class="years-list container">';
     html += '<div class="row p-2">';
     for (var i = 0; i < DB.years.length; i++) {
+      if (!DB.years[i].isValid()) continue;
       html += '<div class="year-outer col-xlg-3 col-lg-4 col-sm-6 col-xs-12">';
       html +=
         '<div class="year" index="' +
@@ -37,6 +39,7 @@
     var html = '<div class="subjects-list container">';
     html += '<div class="row p-2">';
     for (var i = 0; i < year.subjects.length; i++) {
+      if (!year.subjects[i].isValid()) continue;
       html +=
         '<div class="subject-outer col-xlg-3 col-lg-4 col-sm-6 col-xs-12">';
       html +=
@@ -59,6 +62,7 @@
     var html = '<div class="units-list container">';
     html += '<div class="row p-2">';
     for (var i = 0; i < subject.units.length; i++) {
+      if (!subject.units[i].isValid()) continue;
       html += '<div class="unit-outer col-xlg-3 col-lg-4 col-sm-6 col-xs-12">';
       html +=
         '<div class="unit" index="' +
@@ -66,9 +70,8 @@
         '"><label><input type="checkbox" class="select-unit" unit-id="' +
         subject.units[i].id +
         '"/>' +
-        "الوحدة " +
-        Utilities.femaleArabicAlphabeticNumbers[i] +
-        ": " +
+        (i + 1) +
+        " ) " +
         subject.units[i].name +
         "</label>" +
         '<div class="lessons-list container">';

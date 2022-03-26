@@ -58,7 +58,6 @@ class Quiz {
   }
 
   show() {
-    console.log("Show...");
     var html = '<div id="quizOptions">';
     html += "<table>";
     for (var i = 0; i < self.questionsTypes.length; i++) {
@@ -134,7 +133,7 @@ class Quiz {
     for (var i = 0; i < txtBoxs.length; i++) {
       var type = $(txtBoxs[i]).attr("question-type");
       var numberOfQuestions = DB.getItem("quiz-questions-number-" + type);
-      if (!numberOfQuestions) numberOfQuestions = "0";
+      if (!numberOfQuestions) numberOfQuestions = "5";
       $(txtBoxs[i]).val(numberOfQuestions);
     }
   }
@@ -301,7 +300,7 @@ class Quiz {
       }
     });
 
-    this.onReportDisplayed();
+    self.onReportDisplayed();
   }
 
   getReportHtml() {
@@ -342,9 +341,10 @@ class Quiz {
 
     return html;
   }
-  
-  onReportDisplayed(){
-    for (var i = 0; i < self.questions.length; i++) self.questions.onReportDisplayed();
+
+  onReportDisplayed() {
+    for (var i = 0; i < self.questions.length; i++)
+      self.questions[i].onReportDisplayed();
   }
 
   onUserAnswer(event) {

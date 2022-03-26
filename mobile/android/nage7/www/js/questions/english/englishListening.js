@@ -58,13 +58,11 @@
     for (var i = 0; i < this.optionsCount; i++) {
       html +=
         '<div class="option image-text text-right free-height">' +
-        '<img src="' +
-       "data/media/images/english/" +
-        this.getWordByTranslation(this.options[i])
-          .word.toLowerCase()
-          .replace(/ /g, "-") +
-        '/0.jpg">' +
         this.options[i] +
+        '<img src="' +
+        "data/media/images/english/" +
+        Utilities.cleanWord(this.getWordByTranslation(this.options[i]).word) +
+        '/0.jpg">' +
         "</div>";
     }
     html += "</div> ";

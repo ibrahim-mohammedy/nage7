@@ -112,7 +112,7 @@
     html +=
       '<div class="col col-lg-6 col-sm-6 col-md-6 col-xs-6"><img src="' +
       "data/media/images/english/" +
-      this.word.word.toLowerCase().replace(/ /g, "-") +
+      Utilities.cleanWord(this.word.word.toLowerCase().replace(/ /g, "-")) +
       '/0.jpg"></div>';
     return html;
   }
@@ -178,8 +178,6 @@
     for (var i = 0; i < allWords.length; i++) {
       if (allWords[i].translation == translation) return allWords[i];
     }
-
-    alert(translation);
   }
 }
 

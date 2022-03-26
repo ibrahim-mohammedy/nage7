@@ -46,11 +46,13 @@
   ];
 
   static cleanWord(word) {
-    return word
-      .toLowerCase()
-      .replace(/ /g, "-")
-      .replace(/\?/g, "")
-      .replace(/؟/g, "");
+    var cleanWord = word.toString().toLowerCase().replace(/\W+/g, "-");
+    if (cleanWord.length > 0 && cleanWord[0] == "-")
+      cleanWord = cleanWord.substr(1);
+    if (cleanWord.length > 0 && cleanWord[cleanWord.length - 1] == "-")
+      cleanWord = cleanWord.substr(0, cleanWord.length - 1);
+
+    return cleanWord;
   }
 
   static generateUUID() {
