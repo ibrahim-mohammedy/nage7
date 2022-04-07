@@ -321,7 +321,12 @@ class Quiz {
         '<div class="question-title">' +
         self.questions[self.currentQuestion].title +
         "</div>";
+      html +=
+        '<div class="question-body" question-id="' +
+        self.questions[i].id +
+        '">';
       html += self.questions[i].getReportHtml();
+      html += "</div>";
       if (self.questions[i].getScore() < 1) {
         html += '<div class="mb-2 report-correct-answer">';
         html += self.questions[i].getFormattedCorrectAnswer() + "</div>";

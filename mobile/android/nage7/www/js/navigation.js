@@ -83,12 +83,8 @@
           '"><label><input type="checkbox" class="select-lesson" lesson-id="' +
           subject.units[i].lessons[l].id +
           '"/>' +
-          "الدرس " +
-          Utilities.maleArabicAlphabeticNumbers[l] +
-          ": " +
-          subject.units[i].lessons[l].name +
-          "</label>" +
-          "</div></div>";
+          (i + 1);
+        " ) " + subject.units[i].lessons[l].name + "</label>" + "</div></div>";
       }
       html += "</div></div></div>";
     }

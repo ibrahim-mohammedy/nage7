@@ -64,6 +64,10 @@
   font-size: 16px;
 }
 
+.question-options.vertical .option {
+  display: block;
+}
+
 .question-options.circles .option {
   border-radius: 50%;
   width: 45px;
