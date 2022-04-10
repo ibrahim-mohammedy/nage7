@@ -5085,7 +5085,715 @@
       ])
     );
     this.years.push(new Year(6, "الصف الرابع الإبتدائي"));
-    this.years.push(new Year(7, "الصف الخامس الإبتدائي"));
+    this.years.push(
+      new Year(7, "الصف الخامس الإبتدائي", [
+        new Subject(
+          15,
+          "لغة إنجليزية",
+          [
+            new Unit(
+              -1,
+              "At the Aquarium",
+              [],
+              [
+                new EnglishWord(0, "Aquarium", "حديقة الأسماك", false, false),
+                new EnglishWord(
+                  0,
+                  "At the aquarium",
+                  "فى حديقة الأسماك",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "cute", "جذاب / جميل", false, false),
+                new EnglishWord(0, "great", "عظيم", false, false),
+                new EnglishWord(0, "sure", "متأكد", false, false),
+                new EnglishWord(0, "far", "بعيد", false, false),
+                new EnglishWord(0, "go straight", "سر للأمام", false, false),
+                new EnglishWord(0, "on the left", "على اليسار", false, false),
+                new EnglishWord(
+                  0,
+                  "Which..?",
+                  "أى (للاختيار) ... ؟",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "all", "كل", false, false),
+                new EnglishWord(0, "well", "حسنا", false, false),
+                new EnglishWord(0, "dad", "أب", false, false),
+                new EnglishWord(0, "Um!", "صوت (يعبر عن التردد)", false, false),
+                new EnglishWord(0, "really", "بالفعل", false, false),
+                new EnglishWord(
+                  0,
+                  "cashier",
+                  "كاشير - محصل نقود",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "mind", "رأى - رغبة", false, false),
+                new EnglishWord(0, "problem", "مشكلة", false, false),
+                new EnglishWord(0, "over there", "هناك", false, false),
+                new EnglishWord(0, "want", "يريد - يرغب", false, false),
+                new EnglishWord(0, "wanted", "أراد - رغب", false, false),
+                new EnglishWord(0, "look for", "يبحث عن", false, false),
+                new EnglishWord(0, "looked for", "بحث عن ", false, false),
+                new EnglishWord(0, "know", "يعرف", false, false),
+                new EnglishWord(0, "knew", "عرف", false, false),
+                new EnglishWord(0, "take", "يأخذ", false, false),
+                new EnglishWord(0, "took", "أخذ", false, false),
+                new EnglishWord(0, "get", "يحصل على", false, false),
+                new EnglishWord(0, "got", "حصل على", false, false),
+                new EnglishWord(0, "go", "يذهب", false, false),
+                new EnglishWord(0, "went", "ذهب", false, false),
+                new EnglishWord(0, "pay for", "يدفع لــ", false, false),
+                new EnglishWord(0, "paid for", "دفع لــ", false, false),
+                new EnglishWord(
+                  0,
+                  "Which one do you want?",
+                  "أى واحدة تريدين؟",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "Oh, I don't know.",
+                  "لا أعرف",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "They are all cute",
+                  "كلهم جذابين",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "Well, It's time to go.",
+                  "حسنا، حان وقت الذهاب",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "Please make up your mind",
+                  "من فضلك اتخذي قرارك / قرري",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "Are you sure",
+                  "هل أنت متأكد؟",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "Great. Let's get it.",
+                  "عظيم، دعينا نحصل عليها",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "Dad, The cashier is over there",
+                  "يا أب، الكاشير هناك",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "Is it far?", "هل هو بعيد؟", false, false),
+                new EnglishWord(0, "Not, really", "ليس بعيد جدا", false, false),
+                new EnglishWord(
+                  0,
+                  "It's time to go",
+                  "جحان وقت الذهاب",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "It's time to play",
+                  "حان وقت اللعب",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "this", "هذا (للمفرد القريب)", false, false),
+                new EnglishWord(0, "that", "ذلك (للمفرد البعيد)", false, false),
+                new EnglishWord(0, "teacher", "مدرس", false, false),
+                new EnglishWord(0, "farmer", "مزارع", false, false),
+                new EnglishWord(0, "brother", "شقيق", false, false),
+                new EnglishWord(0, "bathroom", "دوره المياه", false, false),
+                new EnglishWord(0, "far", "بعيد", false, false),
+                new EnglishWord(0, "make up", "يقرر", false, false),
+                new EnglishWord(0, "driver", "سائق", false, false),
+                new EnglishWord(0, "doctor", "طبيب", false, false),
+                new EnglishWord(0, "dresses", "فساتين", false, false),
+                new EnglishWord(0, "shops", "محلات", false, false),
+                new EnglishWord(0, "buy", "يشترى", false, false),
+                new EnglishWord(0, "mother", "أم", false, false),
+                new EnglishWord(0, "dress", "فستان", false, false),
+                new EnglishWord(0, "please", "من فضلك", false, false),
+                new EnglishWord(
+                  0,
+                  "I'm looking for the bathroom",
+                  "أنا أبحث عن الحمام",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "Where is the cashier?",
+                  "أين أمين الصندوق؟",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "Which dress do you want?",
+                  "اي فستان تريد؟",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "whale", "حوت", false, false),
+                new EnglishWord(0, "shark", "سمكة قرش", false, false),
+                new EnglishWord(0, "dolphin", "دولفين", false, false),
+                new EnglishWord(0, "octopus", "اخطبوط", false, false),
+                new EnglishWord(0, "eel", "ثعبان الماء", false, false),
+                new EnglishWord(0, "crab", "كابوريا", false, false),
+                new EnglishWord(0, "big", "كبير", false, false),
+                new EnglishWord(0, "fast", "سريع", false, false),
+                new EnglishWord(0, "thirsty", "عطشان", false, false),
+                new EnglishWord(0, "small", "صغير", false, false),
+                new EnglishWord(0, "slow", "بطئ", false, false),
+                new EnglishWord(0, "favourite", "مفضل", false, false),
+                new EnglishWord(
+                  0,
+                  "Which fish do you like?",
+                  "أي سمكة تحب؟",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "I like the red fish",
+                  "أنا أحب السمكة الحمراء",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "It's my favourite",
+                  "هذه هي المفضله لدي",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "Don't throw paper",
+                  "لا ترمي الورق",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "throw", "رمي", false, false),
+                new EnglishWord(0, "Pardon me?", "اعذرني؟", false, false),
+                new EnglishWord(0, "sorry", "آسف", false, false),
+                new EnglishWord(0, "I'm thirsty", "أنا عطشان", false, false),
+                new EnglishWord(0, "juice", "عصير", false, false),
+                new EnglishWord(0, "green", "أخضر", false, false),
+                new EnglishWord(0, "blue", "أزرق", false, false),
+                new EnglishWord(0, "red", "أحمر", false, false),
+                new EnglishWord(0, "family", "أسرة - عائلة", false, false),
+                new EnglishWord(
+                  0,
+                  "yesterday",
+                  "في الامس - بالأمس",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "kinds", "أنواع", false, false),
+                new EnglishWord(
+                  0,
+                  "I need some juice",
+                  "أحتاج بعض العصير",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "careful", "حذر", false, false),
+                new EnglishWord(0, "hungry", "جوعان", false, false),
+                new EnglishWord(0, "Okay", "تمام", false, false),
+                new EnglishWord(0, "snake", "ثعبان", false, false),
+                new EnglishWord(0, "look like", "يبدو مثل", false, false),
+                new EnglishWord(
+                  0,
+                  "An eel looks like a snake",
+                  "ثعبان البحر يشبه الثعبان",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "The octopus has eight arms",
+                  "الأخطبوط له ثمانية أذرع",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "arm", "ذراع", false, false),
+                new EnglishWord(
+                  0,
+                  "This crab isn't fast",
+                  "هذا السلطعون ليس سريعًا",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "How about you?", "ماذا عنك؟", false, false),
+                new EnglishWord(
+                  0,
+                  "What are you going to have?",
+                  "ما الذي ستحصل عليه؟",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "animal", "حيوان", false, false),
+                new EnglishWord(0, "marine animal", "حيوان بحري", false, false),
+                new EnglishWord(
+                  0,
+                  "The old man is my grandfather",
+                  "الرجل العجوز هو جدي",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "smaller than", "اصغر من", false, false),
+                new EnglishWord(0, "slower than", "ابطأ من", false, false),
+                new EnglishWord(0, "faster than", "اسرع من", false, false),
+                new EnglishWord(0, "thin", "نحيف", false, false),
+                new EnglishWord(0, "thinner than", "أرق من", false, false),
+                new EnglishWord(0, "fat", "سمين", false, false),
+                new EnglishWord(
+                  0,
+                  "fatter than",
+                  "أكثر بدانة من",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "big", "كبير", false, false),
+                new EnglishWord(0, "bigger than", "أكبر من", false, false),
+                new EnglishWord(0, "beach", "شاطئ بحر", false, false),
+                new EnglishWord(
+                  0,
+                  "Which is smaller?",
+                  "أيهما أصغر؟",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "farm", "مزرعه", false, false),
+                new EnglishWord(0, "yard", "فناء", false, false),
+                new EnglishWord(0, "garden", "حديقة", false, false),
+                new EnglishWord(0, "barn", "حظيرة", false, false),
+                new EnglishWord(0, "horse", "حصان", false, false),
+                new EnglishWord(0, "lizard", "سحلية", false, false),
+                new EnglishWord(0, "corn", "ذرة", false, false),
+                new EnglishWord(0, "popcorn", "فيشار", false, false),
+                new EnglishWord(0, "peas", "بسلة", false, false),
+                new EnglishWord(0, "smart", "ذكى - بارع", false, false),
+                new EnglishWord(0, "hard", "صلب - صعب", false, false),
+                new EnglishWord(0, "dark", "مظلم", false, false),
+                new EnglishWord(0, "Sky", "سماء", false, false),
+                new EnglishWord(0, "story", "قصة", false, false),
+                new EnglishWord(0, "stories", "قصص", false, false),
+                new EnglishWord(0, "across", "عبر", false, false),
+                new EnglishWord(0, "cards", "كوتشينه", false, false),
+                new EnglishWord(0, "fork", "شوكة", false, false),
+                new EnglishWord(0, "storm", "عاصفة", false, false),
+                new EnglishWord(0, "horn", "وحيد القرن", false, false),
+                new EnglishWord(0, "form", "استمارة", false, false),
+                new EnglishWord(0, "grandpa", "جد", false, false),
+                new EnglishWord(0, "chase", "يطارد", false, false),
+                new EnglishWord(0, "chased", "طارد", false, false),
+                new EnglishWord(0, "listen to", "يستمع إلى", false, false),
+                new EnglishWord(0, "listened to", "استمع إلى", false, false),
+                new EnglishWord(0, "rain", "تمطر", false, false),
+                new EnglishWord(0, "rained", "أمطرت", false, false),
+                new EnglishWord(0, "put", "يضع", false, false),
+                new EnglishWord(0, "blow", "تهب (للرياح)", false, false),
+                new EnglishWord(0, "blew", "هبت (للرياح)", false, false),
+                new EnglishWord(0, "grow", "يزرع", false, false),
+                new EnglishWord(0, "grew", "زرع", false, false),
+                new EnglishWord(
+                  0,
+                  "Where did you go yesterday?",
+                  "أين ذهبت بالأمس؟",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "zoo", "حديقة حيوان", false, false),
+                new EnglishWord(
+                  0,
+                  "It rained very hard",
+                  "لقد أمطرت بغزارة",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "There was a big storm in the evening",
+                  "كانت هناك عاصفة شديدة في المساء",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "Grandpa made popcorn for us",
+                  "أعد الجد الفشار لنا",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "We were happy", "كنا سعداء", false, false),
+                new EnglishWord(
+                  0,
+                  "The wind blew very hard",
+                  "هبت الرياح بشدة",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "One day there was a storm",
+                  "ذات يوم كانت هناك عاصفة",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "Grandpa grows peas and corn",
+                  "الجد يزرع البازلاء والذرة",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "Was there a storm in the evening?",
+                  "هل كانت هناك عاصفة في المساء؟",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "Where did you put the corn?",
+                  "أين وضعت الذرة؟",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "shirt", "قميص", false, false),
+              ]
+            ),
+            new Unit(
+              -1,
+              "At the Safari Park",
+              [],
+              [
+                new EnglishWord(0, "park", "منتزه", false, false),
+                new EnglishWord(0, "careful", "حريص", false, false),
+                new EnglishWord(0, "scary", "مخيف", false, false),
+                new EnglishWord(0, "cute", "جذاب - جميل", false, false),
+                new EnglishWord(0, "monkey", "قرد", false, false),
+                new EnglishWord(0, "mouse", "فأر", false, false),
+                new EnglishWord(0, "Quick", "أسرع", false, false),
+                new EnglishWord(0, "outside", "بالخارج", false, false),
+                new EnglishWord(0, "window", "شباك", false, false),
+                new EnglishWord(0, "door", "باب", false, false),
+                new EnglishWord(0, "bed", "سرير", false, false),
+                new EnglishWord(0, "Aw!", "أوه (كلمة للتعجب)!", false, false),
+                new EnglishWord(0, "Guess what", "خمن ماذا", false, false),
+                new EnglishWord(0, "go away", "يذهب بعيدا", false, false),
+                new EnglishWord(0, "on the car", "على السيارة", false, false),
+                new EnglishWord(
+                  0,
+                  "shut the window",
+                  "يغلق النافذه",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "take a picture",
+                  "يلتقط صورة",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "be very careful",
+                  "كن حذرا جدا",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "guess", "يخمن", false, false),
+                new EnglishWord(0, "guessed", "خمن", false, false),
+                new EnglishWord(0, "worry", "يقلق", false, false),
+                new EnglishWord(0, "worried", "قلق", false, false),
+                new EnglishWord(0, "jump", "يقفز", false, false),
+                new EnglishWord(0, "jumped", "قفز", false, false),
+                new EnglishWord(0, "shut", "يغلق", false, false),
+                new EnglishWord(0, "hurt", "يؤذي - يضر", false, false),
+                new EnglishWord(0, "tell", "يخبر", false, false),
+                new EnglishWord(0, "told", "أخبر", false, false),
+                new EnglishWord(0, "leave", "يترك", false, false),
+                new EnglishWord(0, "left", "ترك", false, false),
+                new EnglishWord(
+                  0,
+                  "It's not cute. It's scary",
+                  "إنه ليس لطيفًا. انه مخيف",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "visit", "زيارة - يزور", false, false),
+                new EnglishWord(
+                  0,
+                  "It won't hurt you",
+                  "إنه لن يؤذيك",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "next week", "الاسبوع القادم", false, false),
+                new EnglishWord(
+                  0,
+                  "She'll visit her aunt next week",
+                  "ستزور خالتها الأسبوع المقبل",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "taxi", "سيارة اجره", false, false),
+                new EnglishWord(0, "bike", "دراجة هوائية", false, false),
+                new EnglishWord(0, "elephant", "فيل", false, false),
+                new EnglishWord(0, "giraffe", "زرافة", false, false),
+                new EnglishWord(0, "chimpanzee", "شمبانزى", false, false),
+                new EnglishWord(0, "cheetah", "الفهد الصياد", false, false),
+                new EnglishWord(0, "turtle", "سلحفاه", false, false),
+                new EnglishWord(0, "thin", "نحيف - رفيع", false, false),
+                new EnglishWord(0, "short", "قصير", false, false),
+                new EnglishWord(0, "fat", "سمين - بدين", false, false),
+                new EnglishWord(0, "tall", "طويل", false, false),
+                new EnglishWord(0, "sure", "بالتأكيد", false, false),
+                new EnglishWord(0, "try some", "جرب بعضها", false, false),
+                new EnglishWord(0, "delicious", "لذيذ", false, false),
+                new EnglishWord(0, "birds", "طيور", false, false),
+                new EnglishWord(0, "airplanes", "طائرات", false, false),
+                new EnglishWord(0, "look at", "ينظر إلى", false, false),
+                new EnglishWord(0, "looked at", "نظر إلى", false, false),
+                new EnglishWord(0, "see", "يرى", false, false),
+                new EnglishWord(0, "saw", "رأى", false, false),
+                new EnglishWord(0, "sit", "يجلس", false, false),
+                new EnglishWord(0, "sat", "جلس", false, false),
+                new EnglishWord(
+                  0,
+                  "Did you see the chimpanzees?",
+                  "هل رأيت حيوانات الشامبنزى؟",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "woman", "امرأه", false, false),
+                new EnglishWord(0, "friend", "صديق", false, false),
+                new EnglishWord(0, "jeep", "سيارة جيب", false, false),
+                new EnglishWord(0, "eat", "تأكل", false, false),
+                new EnglishWord(0, "love", "يحب", false, false),
+                new EnglishWord(0, "tallest", "أطول", false, false),
+                new EnglishWord(
+                  0,
+                  "No, there aren't",
+                  "لا ، لا يوجد",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "shortest", "أقصر", false, false),
+                new EnglishWord(0, "thinnest", "أنحف", false, false),
+                new EnglishWord(0, "fastest", "أسرع", false, false),
+                new EnglishWord(0, "biggest", "أكبر", false, false),
+                new EnglishWord(0, "fattest", "أسمن", false, false),
+                new EnglishWord(
+                  0,
+                  "Which one is the shortest?",
+                  "أيهما هو الأقصر؟",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "Which one is the tallest?",
+                  "أيهما هو الأطول؟",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "The giraffe is the tallest",
+                  "الزرافة هي الأطول",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "The elephant is the fattest",
+                  "الفيل هو الأسمن",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "The turtle is the slowest",
+                  "السلحفاة هي الأبطأ",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "The cheetah is the fastest",
+                  "الفهد هو الأسرع",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "Which one is the fastest?",
+                  "أيهما الأسرع؟",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "cow", "بقرة", false, false),
+                new EnglishWord(0, "trout", "سمكة سلمون", false, false),
+                new EnglishWord(0, "owl", "بومة", false, false),
+                new EnglishWord(0, "mountain", "جبل", false, false),
+                new EnglishWord(0, "home", "بيت", false, false),
+                new EnglishWord(0, "house", "منزل", false, false),
+                new EnglishWord(0, "town", "مدينة", false, false),
+                new EnglishWord(0, "silly", "سخيف", false, false),
+                new EnglishWord(0, "little", "صغير", false, false),
+                new EnglishWord(0, "man", "رجل", false, false),
+                new EnglishWord(0, "clown", "مهرج", false, false),
+                new EnglishWord(0, "mouth", "فم", false, false),
+                new EnglishWord(0, "snow", "ثلج", false, false),
+                new EnglishWord(0, "down", "تحت", false, false),
+                new EnglishWord(0, "cloud", "سحابة", false, false),
+                new EnglishWord(0, "flowers", "زهور", false, false),
+                new EnglishWord(0, "grass", "حشائش", false, false),
+                new EnglishWord(0, "brown", "لون بنى", false, false),
+                new EnglishWord(0, "couch", "كنبه - أريكة", false, false),
+                new EnglishWord(0, "out", "خارج", false, false),
+                new EnglishWord(0, "gown", "عباءة - ثوب نسائى", false, false),
+                new EnglishWord(0, "live", "يعيش", false, false),
+                new EnglishWord(0, "lived", "عاش", false, false),
+                new EnglishWord(0, "start", "يبدأ", false, false),
+                new EnglishWord(0, "started", "بدأ", false, false),
+                new EnglishWord(0, "shout", "يصرخ", false, false),
+                new EnglishWord(0, "shouted", "صرخ", false, false),
+                new EnglishWord(0, "meet", "يقابل", false, false),
+                new EnglishWord(0, "met", "قابل", false, false),
+                new EnglishWord(0, "say", "يقول", false, false),
+                new EnglishWord(0, "said", "قال", false, false),
+                new EnglishWord(0, "go", "يذهب", false, false),
+                new EnglishWord(0, "went", "ذهب", false, false),
+                new EnglishWord(0, "very nice", "", false, false),
+                new EnglishWord(0, "climb", "يتسلق", false, false),
+                new EnglishWord(0, "climbed", "تسلق", false, false),
+                new EnglishWord(0, "there is", "يوجد (للمفرد)", false, false),
+                new EnglishWord(0, "there are", "يوجد (للجمع)", false, false),
+                new EnglishWord(0, "mice", "فئران", false, false),
+                new EnglishWord(0, "gowns", "عباءات", false, false),
+                new EnglishWord(0, "cows", "أبقار", false, false),
+                new EnglishWord(
+                  0,
+                  "cows give us milk",
+                  "الأبقار تعطينا الحليب",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "milk", "حليب", false, false),
+                new EnglishWord(
+                  0,
+                  "There is a monkey on the car",
+                  "هناك قرد على السيارة",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "I told you to be careful",
+                  "قلت لك أن تكون حذرا",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "The sky was dark yesterday",
+                  "كانت السماء مظلمة أمس",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "Are you looking at the birds?",
+                  "هل تنظر الى الطيور؟",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "Don't worry", "لا تقلق", false, false),
+                new EnglishWord(
+                  0,
+                  "Where's the monkey?",
+                  "أين القرد؟",
+                  false,
+                  false
+                ),
+                new EnglishWord(0, "Let's get it", "لنحصل عليه", false, false),
+                new EnglishWord(
+                  0,
+                  "The cashier is over there",
+                  "الكاشير هناك",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "Which animal is the tallest?",
+                  "أي حيوان هو الأطول؟",
+                  false,
+                  false
+                ),
+                new EnglishWord(
+                  0,
+                  "Some animals are scary",
+                  "بعض الحيوانات مخيفة",
+                  false,
+                  false
+                ),
+              ]
+            ),
+          ],
+          [
+            new QuestionCategory(
+              QuestionsTypes.ArabicEnglishChoice,
+              "اختر الترجمة الصحيحة - عربي انجليزي",
+              5
+            ),
+            new QuestionCategory(
+              QuestionsTypes.EnglishArabicChoice,
+              "اختر الترجمة الصحيحة - انجليزي عربي",
+              5
+            ),
+            new QuestionCategory(
+              QuestionsTypes.EnglishComplete,
+              "أكمل الترجمة - انجليزي عربي",
+              5
+            ),
+            new QuestionCategory(
+              QuestionsTypes.EnglishListening,
+              "استمع واختر الترجمة",
+              5
+            ),
+          ]
+        ),
+      ])
+    );
     this.years.push(new Year(8, "الصف السادس الإبتدائي"));
 
     for (
